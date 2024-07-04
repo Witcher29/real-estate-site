@@ -1747,7 +1747,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="'Dubai, ' + ${property1.location}" class="main-property-location">Dubai, Palm Jumeirah</div>
+                                                    <div th:object="${property1}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Palm Jumeirah</div>
                                                     <div th:text="${property1.bedrooms + (property1.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property1.complex_name}" class="main-property-title">4 bedrooms in test</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">
@@ -1808,7 +1808,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="'Dubai, ' + ${property2.location}" class="main-property-location">Dubai, Al Furjan</div>
+                                                    <div th:object="${property2}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Al Furjan</div>
                                                     <div th:text="${property2.bedrooms + (property2.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property2.complex_name}" class="main-property-title">1 bedroom in Test Egor</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">
@@ -1868,7 +1868,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="${'Dubai, ' + property3.location}" class="main-property-location">Dubai, Al Kifaf</div>
+                                                    <div th:object="${property3}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Al Kifaf</div>
                                                     <div th:text="${property3.bedrooms + (property3.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property3.complex_name}" class="main-property-title">1 bedroom in Park Gate Residences</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">
@@ -1928,7 +1928,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="'Dubai, ' + ${property4.location}" class="main-property-location">Dubai, Al Kifaf</div>
+                                                    <div th:object="${property4}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Al Kifaf</div>
                                                     <div th:text="${property4.bedrooms + (property4.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property4.complex_name}" class="main-property-title">2 bedrooms in Park Gate Residences</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">
@@ -1988,7 +1988,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="'Dubai, ' + ${property5.location}" class="main-property-location">Dubai, Al Kifaf</div>
+                                                    <div th:object="${property5}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Al Kifaf</div>
                                                     <div th:text="${property5.bedrooms + (property5.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property5.complex_name}" class="main-property-title">2 bedrooms in Park Gate Residences</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">
@@ -2048,7 +2048,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="'Dubai, ' + ${property6.location}" class="main-property-location">Dubai, Al Kifaf</div>
+                                                    <div th:object="${property6}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Al Kifaf</div>
                                                     <div th:text="${property6.bedrooms + (property6.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property6.complex_name}" class="main-property-title">2 bedrooms in Park Gate Residences</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">
@@ -2108,7 +2108,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:text="'Dubai, ' + ${property7.location}" class="main-property-location">Dubai, Al Kifaf</div>
+                                                    <div th:object="${property7}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Al Kifaf</div>
                                                     <div th:text="${property7.bedrooms + (property7.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property7.complex_name}" class="main-property-title">2 bedrooms in Park Gate Residences</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">

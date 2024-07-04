@@ -927,7 +927,7 @@
 
                             <h1 th:text="${property1.bedrooms + (property1.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property1.complex_name}" class="property-title">4 bedrooms in test</h1>
                             <div class="complex-top-bar">
-                                <a th:text="${property1.location}" class="complex-top-location" href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">
+                                <a th:object="${property1}" th:text="*{place.name}" class="complex-top-location" href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
                                         <path d="M7 0.5C3.6875 0.5 1 3.00885 1 6.09884C1 9.6543 5 15.2887 6.46875 17.2348C6.52972 17.3169 6.60962 17.3838 6.70195 17.4299C6.79428 17.476 6.8964 17.5 7 17.5C7.1036 17.5 7.20573 17.476 7.29805 17.4299C7.39038 17.3838 7.47028 17.3169 7.53125 17.2348C9 15.2895 13 9.65716 13 6.09884C13 3.00885 10.3125 0.5 7 0.5Z"
                                               stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1109,7 +1109,7 @@
                             <div class="row row-margin">
                                 <div class="col-12 col-lg-7">
                                     <div class="property-complex-data">
-                                        <div th:text="'Dubai, ' + ${property1.location}" class="property-complex-location">Dubai, Palm Jumeirah</div>
+                                        <div th:object="${property1}" th:text="'Dubai, ' + *{place.name}" class="property-complex-location">Dubai, Palm Jumeirah</div>
                                         <div th:text="${property1.complex_name}" class="property-complex-name">test</div>
                                         <div class="property-complex-table">
                                             <div class="property_layout property-aside-props">
@@ -1167,7 +1167,7 @@
                                                                   stroke-linejoin="round"/>
                                                         </svg>Location:
                                                     </div>
-                                                    <div class="property_layout_value"><a th:text="${property1.location}"
+                                                    <div class="property_layout_value"><a th:object="${property1}" th:text="*{place.name}"
                                                             href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">Palm Jumeirah</a>
                                                     </div>
                                                 </div>
@@ -1458,9 +1458,9 @@
                                 </div>
                                 <div class="col-12 col-md-7">
                                     <div class="complex-district-block">
-                                        <div class="section-title">
+                                        <div th:object="${property1}" th:text="'About ' + *{place.name}" class="section-title">
                                             About Palm Jumeirah                    </div>
-                                        <div class="complex-district-description">
+                                        <div th:object="${property1}" th:text="*{place.additional_info}" class="complex-district-description">
                                             The Palm Jumeirah is an artificial island in Dubai, shaped like a palm tree and located off the coast of the city. It is one of the most iconic and recognizable landmarks in Dubai, known for its luxurious properties and stunning views of the Arabian Gulf. The Palm Jumeirah was developed by Nakheel Properties, one of Dubai’s largest property developers, and was completed in 2006. The construction of the island involved dredging sand from the seabed and shaping it into the palm tree design, which was then lined with rocks to prevent erosion. The island is home to some of the most expensive and sought-after properties in Dubai.                    </div>
                                         <div class="complex-district-button">
                                             <a href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/" class="btn btn-gold-border">
@@ -1959,7 +1959,7 @@
                             </svg>
                             Location:
                         </div>
-                        <div class="property_layout_value"><a th:text="${property1.location}"
+                        <div class="property_layout_value"><a th:object="${property1}" th:text="*{place.name}"
                                 href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">Palm Jumeirah</a>
                         </div>
                     </div>
