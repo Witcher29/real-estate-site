@@ -914,7 +914,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li><a th:href="'/'" class="home">Home</a></li><li itemscope itemtype="http://schema.org/ListItem"><a href="http://ahmed1872.beget.tech/property/" >Property</a></li><li th:text="${property1.bedrooms + (property1.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property1.complex_name}" class="current">4 bedrooms in test</li></ul>            </div>
+                        <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li><a th:href="'/'" class="home">Home</a></li><li itemscope itemtype="http://schema.org/ListItem"><a href="http://ahmed1872.beget.tech/property/" >Property</a></li><li th:text="${property.bedrooms + (property.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property.complex_name}" class="current">4 bedrooms in test</li></ul>            </div>
                 </div>
             </div>
         </div>	<div class="container">
@@ -925,9 +925,9 @@
 
                         <div class="entry-content">
 
-                            <h1 th:text="${property1.bedrooms + (property1.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property1.complex_name}" class="property-title">4 bedrooms in test</h1>
+                            <h1 th:text="${property.bedrooms + (property.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property.complex_name}" class="property-title">4 bedrooms in test</h1>
                             <div class="complex-top-bar">
-                                <a th:object="${property1}" th:text="*{place.name}" class="complex-top-location" href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">
+                                <a th:object="${property}" th:text="*{place.name}" class="complex-top-location" href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
                                         <path d="M7 0.5C3.6875 0.5 1 3.00885 1 6.09884C1 9.6543 5 15.2887 6.46875 17.2348C6.52972 17.3169 6.60962 17.3838 6.70195 17.4299C6.79428 17.476 6.8964 17.5 7 17.5C7.1036 17.5 7.20573 17.476 7.29805 17.4299C7.39038 17.3838 7.47028 17.3169 7.53125 17.2348C9 15.2895 13 9.65716 13 6.09884C13 3.00885 10.3125 0.5 7 0.5Z"
                                               stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
@@ -940,7 +940,7 @@
                                         <path d="M2.88755 6.12039C2.81856 6.05242 2.73105 6.00639 2.636 5.98806C2.54096 5.96973 2.44262 5.97992 2.35335 6.01736C2.29253 6.03939 2.23729 6.07455 2.19156 6.12033C2.14582 6.16612 2.1107 6.22141 2.08869 6.28229C2.05694 6.3569 2.04416 6.43822 2.0515 6.51899C2.05883 6.59975 2.08605 6.67743 2.13072 6.74509C2.17539 6.81274 2.23612 6.86826 2.30747 6.90666C2.37882 6.94507 2.45857 6.96518 2.53958 6.96518C2.62059 6.96518 2.70034 6.94507 2.77169 6.90666C2.84304 6.86826 2.90377 6.81274 2.94844 6.74509C2.99311 6.67743 3.02033 6.59975 3.02767 6.51899C3.035 6.43822 3.02222 6.3569 2.99047 6.28229C2.96568 6.22282 2.93086 6.16806 2.88755 6.12039ZM6.80832 6.12039C6.71354 6.03285 6.58931 5.98424 6.46035 5.98424C6.33139 5.98424 6.20716 6.03285 6.11238 6.12039C6.06907 6.16806 6.03426 6.22282 6.00946 6.28229C5.97127 6.37151 5.96067 6.47015 5.97901 6.56547C5.99735 6.66079 6.04381 6.74842 6.11238 6.81705C6.16 6.86041 6.21471 6.89526 6.27412 6.92008C6.33279 6.946 6.39622 6.9594 6.46035 6.9594C6.52449 6.9594 6.58792 6.946 6.64659 6.92008C6.70594 6.89515 6.76062 6.86031 6.80832 6.81705C6.87689 6.74842 6.92335 6.66079 6.9417 6.56547C6.96004 6.47015 6.94943 6.37151 6.91124 6.28229C6.88645 6.22282 6.85163 6.16806 6.80832 6.12039ZM8.08257 8.37964C8.42949 8.10279 8.69429 7.73634 8.84838 7.31985C9.00247 6.90336 9.03999 6.45265 8.9569 6.01638L8.22176 2.09152C8.11638 1.52924 7.81799 1.02152 7.37821 0.656175C6.93843 0.290832 6.38492 0.0908496 5.81343 0.0908203H3.18602C2.61461 0.090964 2.06122 0.290999 1.62154 0.656331C1.18186 1.02166 0.883543 1.52932 0.778176 2.09152L0.0430311 6.01638C-0.040002 6.4527 -0.00240123 6.90344 0.151774 7.31993C0.305949 7.73642 0.570841 8.10284 0.917853 8.37964L0.232698 9.06551C0.185889 9.11076 0.148553 9.1649 0.122867 9.22476C0.0971817 9.28461 0.0836618 9.34899 0.0830963 9.41413C0.0825308 9.47927 0.0949311 9.54388 0.119574 9.60417C0.144216 9.66446 0.180607 9.71924 0.226624 9.76531C0.27264 9.81137 0.32736 9.8478 0.387591 9.87247C0.447822 9.89714 0.512358 9.90955 0.577433 9.90898C0.642507 9.90842 0.706818 9.89488 0.766612 9.86917C0.826405 9.84346 0.880485 9.80608 0.925695 9.75923L1.84217 8.84179C2.04077 8.89381 2.2451 8.92068 2.45038 8.92176H6.54857C6.75416 8.92092 6.95883 8.89422 7.15776 8.84228L8.07375 9.75923C8.16618 9.84859 8.28998 9.89804 8.41848 9.89693C8.54699 9.89581 8.66991 9.84421 8.76078 9.75325C8.85164 9.66229 8.90319 9.53924 8.9043 9.4106C8.90542 9.28196 8.85602 9.15804 8.76675 9.06551L8.08257 8.37964ZM1.74072 2.27255C1.80414 1.93512 1.98333 1.63047 2.24732 1.41126C2.51131 1.19205 2.84352 1.07206 3.18651 1.07204H5.81441C6.15723 1.07229 6.4892 1.19239 6.75299 1.41157C7.01678 1.63076 7.19583 1.93529 7.25921 2.27255L7.42927 3.18018C7.06338 3.59705 6.61288 3.93103 6.10783 4.15982C5.60279 4.3886 5.05481 4.50695 4.50046 4.50695C3.94611 4.50695 3.39813 4.3886 2.89308 4.15982C2.38804 3.93103 1.93754 3.59705 1.57164 3.18018L1.74072 2.27255ZM7.67922 7.40872C7.54161 7.57523 7.36894 7.70924 7.17357 7.80118C6.97819 7.89312 6.76494 7.94071 6.54906 7.94054H2.45087C2.23485 7.9405 2.0215 7.89281 1.82598 7.80086C1.63046 7.70891 1.45759 7.57496 1.31965 7.40854C1.18171 7.24212 1.0821 7.04732 1.0279 6.83799C0.973705 6.62866 0.966251 6.40995 1.00607 6.19741L1.35453 4.33703C2.23453 5.0801 3.3487 5.48768 4.49997 5.48768C5.65123 5.48768 6.7654 5.0801 7.64541 4.33703L7.99337 6.19741C8.03356 6.40998 8.02627 6.62881 7.97204 6.83823C7.91782 7.04765 7.81799 7.24246 7.67971 7.40872H7.67922Z" fill="black"/>
                                     </svg></div>
                                     <div class="complex-top-transport-station"> </div>
-                                    <div th:text="${property1.walk}" class="complex-top-transport-faraway">
+                                    <div th:text="${property.walk}" class="complex-top-transport-faraway">
                                         ( min.                        ) <svg xmlns="http://www.w3.org/2000/svg" width="10" height="14" viewBox="0 0 10 14" fill="none">
                                         <path d="M2.10742 12.875L4.06575 10.2639M7.98242 12.875L6.67687 10.2639L4.71853 8.30556L5.37131 4.38889M5.37131 1.77778C5.37131 1.95091 5.44008 2.11694 5.5625 2.23936C5.68492 2.36178 5.85096 2.43056 6.02409 2.43056C6.19722 2.43056 6.36325 2.36178 6.48567 2.23936C6.60809 2.11694 6.67687 1.95091 6.67687 1.77778C6.67687 1.60465 6.60809 1.43861 6.48567 1.31619C6.36325 1.19377 6.19722 1.125 6.02409 1.125C5.85096 1.125 5.68492 1.19377 5.5625 1.31619C5.44008 1.43861 5.37131 1.60465 5.37131 1.77778Z" stroke="#AC835C" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M1.45459 6.99929L2.76015 5.04096L5.37126 4.38818L7.32959 6.34652L9.28792 6.99929" stroke="#AC835C" stroke-linecap="round" stroke-linejoin="round"/>
@@ -952,7 +952,7 @@
                             <div id="property-detail-wrapper" class="item">
                                 <div class="price price-wrapper price-wrapper-slider">
                                     <div class="price-left">
-                                        <div><div th:text="${#strings.replace(#numbers.formatInteger(property1.price,0,'POINT'), '.', ' ')}" class="price-val">810 000USD</div></div>                                    </div>
+                                        <div><div th:text="${#strings.replace(#numbers.formatInteger(property.price,0,'POINT'), '.', ' ')}" class="price-val">810 000USD</div></div>                                    </div>
                                     <div class="price-right">
                                         <ul class="language add_dropdown_menu currency_menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1007 current-item"><a><span>USD</span></a>
                                             <ul class="sub-menu">
@@ -994,7 +994,7 @@
                                                           fill="#AC835C" stroke="#F2F7FF" stroke-width="0.3"/>
                                                 </svg>Delivery date:
                                             </div>
-                                            <div th:text="${#temporals.format(property1.delivery_date, 'MM-yyyy')}" class="property_layout_value">12.2022</div>
+                                            <div th:text="${#temporals.format(property.delivery_date, 'MM-yyyy')}" class="property_layout_value">12.2022</div>
                                         </div>
 
                                         <div class="property_layout_line">
@@ -1109,8 +1109,8 @@
                             <div class="row row-margin">
                                 <div class="col-12 col-lg-7">
                                     <div class="property-complex-data">
-                                        <div th:object="${property1}" th:text="'Dubai, ' + *{place.name}" class="property-complex-location">Dubai, Palm Jumeirah</div>
-                                        <div th:text="${property1.complex_name}" class="property-complex-name">test</div>
+                                        <div th:object="${property}" th:text="'Dubai, ' + *{place.name}" class="property-complex-location">Dubai, Palm Jumeirah</div>
+                                        <div th:text="${property.complex_name}" class="property-complex-name">test</div>
                                         <div class="property-complex-table">
                                             <div class="property_layout property-aside-props">
                                                 <div class="property_layout_line">
@@ -1125,7 +1125,7 @@
                                                         </svg>
                                                         Developer:
                                                     </div>
-                                                    <div class="property_layout_value"><a th:text="${property1.developer}"
+                                                    <div class="property_layout_value"><a th:text="${property.developer}"
                                                             href="http://ahmed1872.beget.tech/organisation/aark-developers-en/">Aark Developers</a></div>
                                                 </div>
                                                 <div class="property_layout_line">
@@ -1136,7 +1136,7 @@
                                                                   fill="#AC835C" stroke="#F2F7FF" stroke-width="0.3"/>
                                                         </svg>Delivery date:
                                                     </div>
-                                                    <div th:text="${#temporals.format(property1.delivery_date, 'MM-yyyy')}" class="property_layout_value">12.2022</div>
+                                                    <div th:text="${#temporals.format(property.delivery_date, 'MM-yyyy')}" class="property_layout_value">12.2022</div>
                                                 </div>
                                                 <div class="property_layout_line">
                                                     <div class="property_layout_name">
@@ -1154,7 +1154,7 @@
                                                         </svg>
                                                         Type:
                                                     </div>
-                                                    <div th:text="${property1.type}" class="property_layout_value">Villa</div>
+                                                    <div th:text="${property.type}" class="property_layout_value">Villa</div>
                                                 </div>
                                                 <div class="property_layout_line">
                                                     <div class="property_layout_name">
@@ -1167,16 +1167,23 @@
                                                                   stroke-linejoin="round"/>
                                                         </svg>Location:
                                                     </div>
-                                                    <div class="property_layout_value"><a th:object="${property1}" th:text="*{place.name}"
+                                                    <div class="property_layout_value"><a th:object="${property}" th:text="*{place.name}"
                                                             href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">Palm Jumeirah</a>
                                                     </div>
+                                                </div>
+                                                <div th:if="${property.metro} != null" class="property_layout_line">
+                                                    <div class="property_layout_name"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                                                        <path d="M5.81258 11.0493C5.6976 10.936 5.55175 10.8593 5.39334 10.8287C5.23493 10.7982 5.07103 10.8152 4.92224 10.8776C4.82088 10.9143 4.72882 10.9729 4.6526 11.0492C4.57637 11.1255 4.51784 11.2176 4.48116 11.3191C4.42824 11.4435 4.40694 11.579 4.41916 11.7136C4.43139 11.8482 4.47676 11.9777 4.55121 12.0904C4.62566 12.2032 4.72687 12.2957 4.84578 12.3597C4.9647 12.4238 5.09762 12.4573 5.23264 12.4573C5.36766 12.4573 5.50057 12.4238 5.61949 12.3597C5.73841 12.2957 5.83962 12.2032 5.91407 12.0904C5.98852 11.9777 6.03388 11.8482 6.04611 11.7136C6.05833 11.579 6.03703 11.4435 5.98412 11.3191C5.9428 11.22 5.88477 11.1287 5.81258 11.0493ZM12.3472 11.0493C12.1892 10.9034 11.9822 10.8224 11.7673 10.8224C11.5523 10.8224 11.3453 10.9034 11.1873 11.0493C11.1151 11.1287 11.0571 11.22 11.0158 11.3191C10.9521 11.4678 10.9344 11.6322 10.965 11.7911C10.9956 11.9499 11.073 12.096 11.1873 12.2104C11.2667 12.2826 11.3579 12.3407 11.4569 12.3821C11.5546 12.4253 11.6604 12.4476 11.7673 12.4476C11.8741 12.4476 11.9799 12.4253 12.0776 12.3821C12.1766 12.3405 12.2677 12.2825 12.3472 12.2104C12.4615 12.096 12.5389 11.9499 12.5695 11.7911C12.6001 11.6322 12.5824 11.4678 12.5187 11.3191C12.4774 11.22 12.4194 11.1287 12.3472 11.0493ZM14.471 14.8147C15.0492 14.3533 15.4905 13.7425 15.7473 13.0484C16.0041 12.3542 16.0667 11.6031 15.9282 10.8759L14.7029 4.3345C14.5273 3.39737 14.03 2.55116 13.297 1.94226C12.564 1.33335 11.6415 1.00005 10.689 1H6.31003C5.35769 1.00024 4.43536 1.33363 3.70257 1.94252C2.96977 2.55141 2.47257 3.39751 2.29696 4.3345L1.07172 10.8759C0.93333 11.6031 0.995998 12.3544 1.25296 13.0485C1.50991 13.7427 1.9514 14.3534 2.52976 14.8147L1.38783 15.9578C1.30982 16.0332 1.24759 16.1235 1.20478 16.2232C1.16197 16.323 1.13944 16.4303 1.13849 16.5389C1.13755 16.6474 1.15822 16.7551 1.19929 16.8556C1.24036 16.9561 1.30101 17.0474 1.37771 17.1241C1.4544 17.2009 1.5456 17.2616 1.64599 17.3027C1.74637 17.3439 1.85393 17.3645 1.96239 17.3636C2.07085 17.3627 2.17803 17.3401 2.27769 17.2973C2.37734 17.2544 2.46747 17.1921 2.54282 17.114L4.07029 15.5849C4.40128 15.6717 4.74184 15.7164 5.08397 15.7182H11.9143C12.2569 15.7168 12.598 15.6723 12.9296 15.5858L14.4563 17.114C14.6103 17.263 14.8166 17.3454 15.0308 17.3435C15.245 17.3416 15.4498 17.2557 15.6013 17.104C15.7527 16.9524 15.8386 16.7474 15.8405 16.533C15.8424 16.3186 15.76 16.112 15.6112 15.9578L14.471 14.8147ZM3.90121 4.63622C4.00689 4.07383 4.30554 3.56608 4.74553 3.20074C5.18552 2.83539 5.73919 2.63541 6.31085 2.63536H10.6907C11.2621 2.63579 11.8153 2.83594 12.255 3.20126C12.6946 3.56657 12.993 4.07411 13.0987 4.63622L13.3821 6.14893C12.7723 6.84372 12.0215 7.40035 11.1797 7.78166C10.338 8.16297 9.42468 8.36021 8.50076 8.36021C7.57684 8.36021 6.66355 8.16297 5.82181 7.78166C4.98006 7.40035 4.22923 6.84372 3.6194 6.14893L3.90121 4.63622ZM13.7987 13.1965C13.5693 13.474 13.2816 13.6974 12.9559 13.8506C12.6303 14.0038 12.2749 14.0831 11.9151 14.0829H5.08479C4.72476 14.0828 4.36916 14.0033 4.0433 13.8501C3.71744 13.6968 3.42931 13.4736 3.19942 13.1962C2.96952 12.9188 2.8035 12.5942 2.71317 12.2453C2.62284 11.8964 2.61042 11.5319 2.67678 11.1777L3.25755 8.07701C4.72422 9.31547 6.58117 9.99477 8.49995 9.99477C10.4187 9.99477 12.2757 9.31547 13.7423 8.07701L14.3223 11.1777C14.3893 11.5319 14.3771 11.8967 14.2867 12.2457C14.1964 12.5947 14.03 12.9194 13.7995 13.1965H13.7987Z" fill="#AC835C" stroke="#F4F4F4" stroke-width="0.5"/>
+                                                    </svg>Metro                                        :
+                                                    </div>
+                                                    <div th:text="${property.metro}" class="property_layout_value"></div>
                                                 </div>
                                                 <div class="property_layout_line">
                                                     <div class="property_layout_name"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 9 10" fill="none">
                                                         <path d="M2.88755 6.12039C2.81856 6.05242 2.73105 6.00639 2.636 5.98806C2.54096 5.96973 2.44262 5.97992 2.35335 6.01736C2.29253 6.03939 2.23729 6.07455 2.19156 6.12033C2.14582 6.16612 2.1107 6.22141 2.08869 6.28229C2.05694 6.3569 2.04416 6.43822 2.0515 6.51899C2.05883 6.59975 2.08605 6.67743 2.13072 6.74509C2.17539 6.81274 2.23612 6.86826 2.30747 6.90666C2.37882 6.94507 2.45857 6.96518 2.53958 6.96518C2.62059 6.96518 2.70034 6.94507 2.77169 6.90666C2.84304 6.86826 2.90377 6.81274 2.94844 6.74509C2.99311 6.67743 3.02033 6.59975 3.02767 6.51899C3.035 6.43822 3.02222 6.3569 2.99047 6.28229C2.96568 6.22282 2.93086 6.16806 2.88755 6.12039ZM6.80832 6.12039C6.71354 6.03285 6.58931 5.98424 6.46035 5.98424C6.33139 5.98424 6.20716 6.03285 6.11238 6.12039C6.06907 6.16806 6.03426 6.22282 6.00946 6.28229C5.97127 6.37151 5.96067 6.47015 5.97901 6.56547C5.99735 6.66079 6.04381 6.74842 6.11238 6.81705C6.16 6.86041 6.21471 6.89526 6.27412 6.92008C6.33279 6.946 6.39622 6.9594 6.46035 6.9594C6.52449 6.9594 6.58792 6.946 6.64659 6.92008C6.70594 6.89515 6.76062 6.86031 6.80832 6.81705C6.87689 6.74842 6.92335 6.66079 6.9417 6.56547C6.96004 6.47015 6.94943 6.37151 6.91124 6.28229C6.88645 6.22282 6.85163 6.16806 6.80832 6.12039ZM8.08257 8.37964C8.42949 8.10279 8.69429 7.73634 8.84838 7.31985C9.00247 6.90336 9.03999 6.45265 8.9569 6.01638L8.22176 2.09152C8.11638 1.52924 7.81799 1.02152 7.37821 0.656175C6.93843 0.290832 6.38492 0.0908496 5.81343 0.0908203H3.18602C2.61461 0.090964 2.06122 0.290999 1.62154 0.656331C1.18186 1.02166 0.883543 1.52932 0.778176 2.09152L0.0430311 6.01638C-0.040002 6.4527 -0.00240123 6.90344 0.151774 7.31993C0.305949 7.73642 0.570841 8.10284 0.917853 8.37964L0.232698 9.06551C0.185889 9.11076 0.148553 9.1649 0.122867 9.22476C0.0971817 9.28461 0.0836618 9.34899 0.0830963 9.41413C0.0825308 9.47927 0.0949311 9.54388 0.119574 9.60417C0.144216 9.66446 0.180607 9.71924 0.226624 9.76531C0.27264 9.81137 0.32736 9.8478 0.387591 9.87247C0.447822 9.89714 0.512358 9.90955 0.577433 9.90898C0.642507 9.90842 0.706818 9.89488 0.766612 9.86917C0.826405 9.84346 0.880485 9.80608 0.925695 9.75923L1.84217 8.84179C2.04077 8.89381 2.2451 8.92068 2.45038 8.92176H6.54857C6.75416 8.92092 6.95883 8.89422 7.15776 8.84228L8.07375 9.75923C8.16618 9.84859 8.28998 9.89804 8.41848 9.89693C8.54699 9.89581 8.66991 9.84421 8.76078 9.75325C8.85164 9.66229 8.90319 9.53924 8.9043 9.4106C8.90542 9.28196 8.85602 9.15804 8.76675 9.06551L8.08257 8.37964ZM1.74072 2.27255C1.80414 1.93512 1.98333 1.63047 2.24732 1.41126C2.51131 1.19205 2.84352 1.07206 3.18651 1.07204H5.81441C6.15723 1.07229 6.4892 1.19239 6.75299 1.41157C7.01678 1.63076 7.19583 1.93529 7.25921 2.27255L7.42927 3.18018C7.06338 3.59705 6.61288 3.93103 6.10783 4.15982C5.60279 4.3886 5.05481 4.50695 4.50046 4.50695C3.94611 4.50695 3.39813 4.3886 2.89308 4.15982C2.38804 3.93103 1.93754 3.59705 1.57164 3.18018L1.74072 2.27255ZM7.67922 7.40872C7.54161 7.57523 7.36894 7.70924 7.17357 7.80118C6.97819 7.89312 6.76494 7.94071 6.54906 7.94054H2.45087C2.23485 7.9405 2.0215 7.89281 1.82598 7.80086C1.63046 7.70891 1.45759 7.57496 1.31965 7.40854C1.18171 7.24212 1.0821 7.04732 1.0279 6.83799C0.973705 6.62866 0.966251 6.40995 1.00607 6.19741L1.35453 4.33703C2.23453 5.0801 3.3487 5.48768 4.49997 5.48768C5.65123 5.48768 6.7654 5.0801 7.64541 4.33703L7.99337 6.19741C8.03356 6.40998 8.02627 6.62881 7.97204 6.83823C7.91782 7.04765 7.81799 7.24246 7.67971 7.40872H7.67922Z" fill="#AC835C"/>
                                                     </svg>Bus station                                        :
                                                     </div>
-                                                    <div th:text="${property1.bus_station}" class="property_layout_value"></div>
+                                                    <div th:text="${property.bus_station}" class="property_layout_value"></div>
                                                 </div>
                                                 <div class="property_layout_line">
                                                     <div class="property_layout_name"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="18" viewBox="0 0 10 14" fill="none">
@@ -1184,13 +1191,13 @@
                                                         <path d="M1.45459 6.99929L2.76015 5.04096L5.37126 4.38818L7.32959 6.34652L9.28792 6.99929" stroke="#AC835C" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>Walk                                        :
                                                     </div>
-                                                    <div th:text="${property1.walk}" class="property_layout_value"> min.</div>
+                                                    <div th:text="${property.walk}" class="property_layout_value"> min.</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="property-complex-price-block">
                                             <div class="property-complex-price">
-                                                <span class="price_inner_from">From</span> <span th:text="${#strings.replace(#numbers.formatInteger(property1.price,0,'POINT'), '.', ' ')}" class="price_inner_num">810 000</span><span class="price_inner_symb">USD</span>                                                    </div>
+                                                <span class="price_inner_from">From</span> <span th:text="${#strings.replace(#numbers.formatInteger(property.price,0,'POINT'), '.', ' ')}" class="price_inner_num">810 000</span><span class="price_inner_symb">USD</span>                                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1241,7 +1248,7 @@
                                                      data-animation-delay="200">
                                                     <div class="item-property">
                                                         <div class="item-property-top">
-                                                            <div class="item-property-title"><a th:text="${property1.bedrooms + (property1.bedrooms == 1 ? ' bedroom' : ' bedrooms in ')}"
+                                                            <div class="item-property-title"><a th:text="${property.bedrooms + (property.bedrooms == 1 ? ' bedroom' : ' bedrooms in ')}"
                                                                     href="http://ahmed1872.beget.tech/property/4-bedrooms-in-test-en/">4 Bedrooms</a></div>
                                                         </div>
                                                         <div class="image">
@@ -1252,7 +1259,7 @@
                                                             <div class="price-left">
                                                                 <div class="price-left-title">
                                                                     Price                            </div>
-                                                                <div><div th:text="${#strings.replace(#numbers.formatInteger(property1.price,0,'POINT'), '.', ' ')}" class="price-val">810 000USD</div></div>                                                                        </div>
+                                                                <div><div th:text="${#strings.replace(#numbers.formatInteger(property.price,0,'POINT'), '.', ' ')}" class="price-val">810 000USD</div></div>                                                                        </div>
                                                             <div class="price-right">
                                                                 <ul class="language add_dropdown_menu currency_menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1007 current-item"><a><span>USD</span></a>
                                                                     <ul class="sub-menu">
@@ -1298,14 +1305,14 @@
                                                                 <div class="mortgage-calculator-description">
                                                                     Estimate how much you could borrow from our partner banks                    </div>
                                                                 <input name="location" type="hidden" value="4 bedrooms in test">
-                                                                <input name="base_price" type="hidden" th:value="${#strings.replace(#numbers.formatInteger(property1.price,0,'POINT'), '.', ' ')}">
+                                                                <input name="base_price" type="hidden" th:value="${#strings.replace(#numbers.formatInteger(property.price,0,'POINT'), '.', ' ')}">
                                                                 <div class="mortgage-input-group">
                                                                     <div class="mortgage-calculator-label">
                                                                         <label for="form_property_price"
                                                                                class="form-label">Property price</label>
                                                                     </div>
                                                                     <input name="property_price" class="form-control on_digits_separator" id="form_property_price"
-                                                                           th:value="${#strings.replace(#numbers.formatInteger(property1.price,0,'POINT'), '.', ' ')}">
+                                                                           th:value="${#strings.replace(#numbers.formatInteger(property.price,0,'POINT'), '.', ' ')}">
                                                                 </div>
                                                                 <div class="mortgage-input-group">
                                                                     <div class="mortgage-calculator-label">
@@ -1458,9 +1465,9 @@
                                 </div>
                                 <div class="col-12 col-md-7">
                                     <div class="complex-district-block">
-                                        <div th:object="${property1}" th:text="'About ' + *{place.name}" class="section-title">
+                                        <div th:object="${property}" th:text="'About ' + *{place.name}" class="section-title">
                                             About Palm Jumeirah                    </div>
-                                        <div th:object="${property1}" th:text="*{place.additional_info}" class="complex-district-description">
+                                        <div th:object="${property}" th:text="*{place.additional_info}" class="complex-district-description">
                                             The Palm Jumeirah is an artificial island in Dubai, shaped like a palm tree and located off the coast of the city. It is one of the most iconic and recognizable landmarks in Dubai, known for its luxurious properties and stunning views of the Arabian Gulf. The Palm Jumeirah was developed by Nakheel Properties, one of Dubai’s largest property developers, and was completed in 2006. The construction of the island involved dredging sand from the seabed and shaping it into the palm tree design, which was then lined with rocks to prevent erosion. The island is home to some of the most expensive and sought-after properties in Dubai.                    </div>
                                         <div class="complex-district-button">
                                             <a href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/" class="btn btn-gold-border">
@@ -1866,7 +1873,7 @@
                         <div class="property_layout_name"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
                             <path d="M14.3333 17.6667H2.66667C1.74619 17.6667 1 16.9205 1 16V4.33333C1 3.41286 1.74619 2.66667 2.66667 2.66667H4.33333V1H6V2.66667H11V1H12.6667V2.66667H14.3333C15.2538 2.66667 16 3.41286 16 4.33333V16C16 16.9205 15.2538 17.6667 14.3333 17.6667ZM2.66667 7.66667V16H14.3333V7.66667H2.66667ZM2.66667 4.33333V6H14.3333V4.33333H2.66667Z" fill="#AC835C" stroke="#F2F7FF" stroke-width="0.3"/>
                         </svg>Delivery date:</div>
-                        <div th:text="${#temporals.format(property1.delivery_date, 'MM-yyyy')}" class="property_layout_value">12.2022</div>
+                        <div th:text="${#temporals.format(property.delivery_date, 'MM-yyyy')}" class="property_layout_value">12.2022</div>
                     </div>
 
                     <div class="property_layout_line">
@@ -1877,7 +1884,7 @@
                             </svg>
                             S total:
                         </div>
-                        <div th:text="${property1.s_total}" class="property_layout_value"> </div>
+                        <div th:text="${property.s_total}" class="property_layout_value"> </div>
                     </div>
                     <div class="property_layout_line">
                         <div class="property_layout_name">
@@ -1887,7 +1894,27 @@
                             </svg>
                             Beds:
                         </div>
-                        <div th:text="${property1.bedrooms + (property1.bedrooms == 1 ? ' Bedroom' : ' Bedrooms')}" class="property_layout_value">4 Bedrooms</div>
+                        <div th:text="${property.bedrooms + (property.bedrooms == 1 ? ' Bedroom' : ' Bedrooms')}" class="property_layout_value">4 Bedrooms</div>
+                    </div>
+                    <div th:if="${property.baths > 1}" class="property_layout_line">
+                        <div class="property_layout_name">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 8.72414H16M4.8 14.2414H11.2M4.8 14.2414C3.95131 14.2414 3.13738 13.8926 2.53726 13.2718C1.93714 12.651 1.6 11.809 1.6 10.931V4.31034C1.6 3.43239 1.93714 2.59039 2.53726 1.96958C3.13738 1.34877 3.95131 1 4.8 1H6.93333V2.65517M4.8 14.2414V17M11.2 14.2414C12.0487 14.2414 12.8626 13.8926 13.4627 13.2718C14.0629 12.651 14.4 11.809 14.4 10.931V8.72414M11.2 14.2414V17M5.33333 4.31034H8.53333"
+                                      stroke="#AC835C" stroke-width="1.33"/>
+                            </svg>
+                            Bathrooms:
+                        </div>
+                        <div th:text="${property.baths}" class="property_layout_value">4 </div>
+                    </div>
+                    <div th:if="${property.ceiling_height > 2}" class="property_layout_line">
+                        <div class="property_layout_name">
+                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0154 6.15102C10.9095 6.04519 10.8452 5.9049 10.834 5.75564C10.8228 5.60638 10.8656 5.45808 10.9545 5.33768L11.0154 5.26685L12.9879 3.29185C13.0476 3.20007 13.1297 3.12508 13.2266 3.07403C13.3234 3.02298 13.4317 2.99756 13.5412 3.00019C13.7512 3.00019 13.937 3.09102 14.0504 3.23019L14.0945 3.29269L16.067 5.26769L16.1279 5.33768C16.2064 5.44387 16.2492 5.57219 16.2502 5.70424C16.2513 5.83628 16.2105 5.96526 16.1337 6.07268L16.067 6.15102L15.997 6.21185C15.8908 6.29054 15.7623 6.33349 15.6301 6.33454C15.4978 6.33559 15.3687 6.29467 15.2612 6.21768L15.1829 6.15102L14.1654 5.13352V8.28685L14.1595 8.36102C14.1179 8.62768 13.857 8.83352 13.5404 8.83352C13.2237 8.83352 12.962 8.62768 12.9212 8.36102L12.9154 8.28602V5.13352L11.8987 6.15102L11.8287 6.21185C11.7083 6.30078 11.56 6.34355 11.4107 6.33239C11.2615 6.32122 11.1212 6.25687 11.0154 6.15102ZM11.0179 14.8494C11.1237 14.7435 11.264 14.6791 11.4132 14.668C11.5625 14.6568 11.7108 14.6996 11.8312 14.7885L11.9012 14.8494L12.9179 15.8669V12.7135C12.9179 12.4119 13.1979 12.1669 13.5429 12.1669C13.8595 12.1669 14.1204 12.3727 14.162 12.6394L14.1679 12.7144V15.8669L15.1854 14.8494C15.2912 14.7433 15.4317 14.6788 15.5811 14.6676C15.7306 14.6565 15.8791 14.6994 15.9995 14.7885L16.0695 14.8494C16.1754 14.9552 16.2397 15.0955 16.2509 15.2447C16.2621 15.394 16.2193 15.5423 16.1304 15.6627L16.0695 15.7327L14.097 17.7077C14.0374 17.7996 13.9553 17.8748 13.8584 17.926C13.7616 17.9772 13.6532 18.0027 13.5437 18.0002C13.4342 18.0028 13.3259 17.9774 13.2291 17.9263C13.1322 17.8753 13.0501 17.8003 12.9904 17.7085L11.0179 15.7335C10.9598 15.6755 10.9137 15.6066 10.8823 15.5307C10.8508 15.4548 10.8347 15.3735 10.8347 15.2914C10.8347 15.2093 10.8508 15.128 10.8823 15.0522C10.9137 14.9763 10.9598 14.9074 11.0179 14.8494ZM5.20703 3.82685C4.70975 3.82685 4.23284 4.0244 3.88121 4.37603C3.52958 4.72766 3.33203 5.20457 3.33203 5.70185V15.2852C3.33203 15.7825 3.52958 16.2594 3.88121 16.611C4.23284 16.9626 4.70975 17.1602 5.20703 17.1602H8.54037C8.70613 17.1602 8.8651 17.0943 8.98231 16.9771C9.09952 16.8599 9.16537 16.7009 9.16537 16.5352C9.16537 16.3694 9.09952 16.2105 8.98231 16.0932C8.8651 15.976 8.70613 15.9102 8.54037 15.9102H5.20703C5.04127 15.9102 4.8823 15.8443 4.76509 15.7271C4.64788 15.6099 4.58203 15.4509 4.58203 15.2852V5.70185C4.58203 5.53609 4.64788 5.37712 4.76509 5.25991C4.8823 5.1427 5.04127 5.07685 5.20703 5.07685H8.54037C8.70613 5.07685 8.8651 5.011 8.98231 4.89379C9.09952 4.77658 9.16537 4.61761 9.16537 4.45185C9.16537 4.28609 9.09952 4.12712 8.98231 4.00991C8.8651 3.8927 8.70613 3.82685 8.54037 3.82685H5.20703Z"
+                                      fill="#AC835C"/>
+                            </svg>
+                            Ceiling height:
+                        </div>
+                        <div th:text="${property.ceiling_height} + ' m'" class="property_layout_value">4 </div>
                     </div>
                     <div class="property_layout_line">
                         <div class="property_layout_name">
@@ -1897,7 +1924,7 @@
                             </svg>
                             Facade:
                         </div>
-                        <div th:text="${property1.facade}" class="property_layout_value"> </div>
+                        <div th:text="${property.facade}" class="property_layout_value"> </div>
                         <div class="property_layout_value"></div>
                     </div>
                     <div class="property_layout_line">
@@ -1908,7 +1935,7 @@
                             </svg>
                             Wall Material:
                         </div>
-                        <div th:text="${property1.wall_material}" class="property_layout_value">Monolith</div>
+                        <div th:text="${property.wall_material}" class="property_layout_value">Monolith</div>
                     </div>
                     <div class="property_layout_line">
                         <div class="property_layout_name">
@@ -1918,7 +1945,7 @@
                             </svg>
                             Parking:
                         </div>
-                        <div th:text="${property1.parking}" class="property_layout_value">Separate multi-level parking</div>
+                        <div th:text="${property.parking}" class="property_layout_value">Separate multi-level parking</div>
                     </div>
                     <div class="property_layout_line">
                         <div class="property_layout_name">
@@ -1929,7 +1956,7 @@
 
                             Elevator:
                         </div>
-                        <div th:text="${property1.elevator}" class="property_layout_value">Passenger</div>
+                        <div th:text="${property.elevator}" class="property_layout_value">Passenger</div>
                     </div>
                     <div class="property_layout_line">
                         <div class="property_layout_name">
@@ -1946,7 +1973,7 @@
                             </svg>
                             Complex Name:
                         </div>
-                        <div class="property_layout_value"><a th:text="${property1.complex_name}"
+                        <div class="property_layout_value"><a th:text="${property.complex_name}"
                                 href="http://ahmed1872.beget.tech/complex/test-en-2/">test</a></div>
                     </div>
                     <div class="property_layout_line">
@@ -1959,7 +1986,7 @@
                             </svg>
                             Location:
                         </div>
-                        <div class="property_layout_value"><a th:object="${property1}" th:text="*{place.name}"
+                        <div class="property_layout_value"><a th:object="${property}" th:text="*{place.name}"
                                 href="http://ahmed1872.beget.tech/district/palm-jumeirah-en/">Palm Jumeirah</a>
                         </div>
                     </div>
