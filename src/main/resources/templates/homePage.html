@@ -1740,7 +1740,7 @@
                                 <div class="row">
                                     <div th:each="property, propertyStat : ${properties}" class="col-md-6 col-xl-3">
                                         <div  th:class="${propertyStat.index == 0 ? 'main-property-item is_active' : 'main-property-item'}">
-                                            <img th:if="${not #lists.isEmpty(property.images)}" th:src="${property.images[0]}" alt="Image" class="lazyload" src="" data-src="">
+                                            <img th:src="${property.image}" alt="Image" class="lazyload" src="" data-src="">
                                             <div class="main-property-labels">
                                                 <div th:text="'Delivery date: ' + ${#temporals.format(property.delivery_date, 'MM-yyyy')}" class="main-property-labels-data">Delivery date: 12-2022</div>
                                                 <div th:text="${property.status}" class="main-property-labels-data">Sold out</div>

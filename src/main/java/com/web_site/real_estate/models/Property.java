@@ -40,7 +40,6 @@ public class Property {
     private String type;
     private String status;
     private Long price;
-    @ElementCollection
-    private List<String> images;
+    private String image;
     private String metro;
 }
