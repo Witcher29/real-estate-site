@@ -1368,7 +1368,7 @@
                                     </li>
                                     <li id="menu-item-25239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25239"><a title="Complexes" href="/complex/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Complexes <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
-                                            <li id="menu-item-9015" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9015"><a title="All complexes" href="/complex/">All complexes</a></li>
+                                            <li id="menu-item-9015" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9015"><a title="All complexes" th:href="'/complex/page/1'">All complexes</a></li>
                                             <li id="menu-item-61355" class="menu-item menu-item-type-post_type menu-item-object-complex menu-item-61355"><a title="Bayz 101" href="http://ahmed1872.beget.tech/complex/bayz-101-en/">Bayz 101</a></li>
                                             <li id="menu-item-61356" class="menu-item menu-item-type-post_type menu-item-object-complex menu-item-61356"><a title="Lake Views" href="http://ahmed1872.beget.tech/complex/lake-views-en/">Lake Views</a></li>
                                             <li id="menu-item-61357" class="menu-item menu-item-type-post_type menu-item-object-complex menu-item-61357"><a title="Dubai Island" href="http://ahmed1872.beget.tech/?post_type=complex&#038;p=44873">Dubai Island</a></li>
@@ -1793,7 +1793,7 @@
                                                         <div th:text="${property.bedrooms + (property.bedrooms == 1 ? ' Bedroom' : ' Bedrooms')}" class="main-property-add-data-item">
                                                             4 Bedrooms </div>
                                                     </div>
-                                                    <a th:href="'/property/' + ${property.bedrooms} + '-bedrooms-in-' + ${property.complex_name} + '-' + ${property.id}" class="main-property-button">
+                                                    <a th:href="'/property/' + ${property.bedrooms} + '-bedrooms-in-' + ${property.complex_name.replace(' ', '-')} + '-' + ${property.id}" class="main-property-button">
                                                         More Details                                                </a>
                                                 </div>
                                             </div>

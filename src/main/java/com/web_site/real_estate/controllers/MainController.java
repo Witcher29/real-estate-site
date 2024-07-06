@@ -1,6 +1,8 @@
 package com.web_site.real_estate.controllers;
 
+import com.web_site.real_estate.models.Complex;
 import com.web_site.real_estate.models.Property;
+import com.web_site.real_estate.repo.ComplexRepository;
 import com.web_site.real_estate.repo.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,9 @@ public class MainController {
 
     @Autowired
     private PropertyRepository propertyRepository;
+
+    @Autowired
+    private ComplexRepository complexRepository;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -34,5 +39,25 @@ public class MainController {
             model.addAttribute("property", property);
         }
         return "propertyPage";
+    }
+
+    @GetMapping("/complex/page/{numberOfPage}")
+    public String complexes(@PathVariable(required = false) Integer numberOfPage, Model model) {
+        List<Complex> complexes = complexRepository.findAll();
+
+        model.addAttribute("complexes", complexes);
+        if(numberOfPage != null)
+            model.addAttribute("number", numberOfPage);
+        return "all_complexes";
+    }
+
+    @GetMapping("/complex/{complex_name}-{id}")
+    public String moreDetailsOfComplexes(@PathVariable("id") Integer idOfComplex, Model model) {
+        Optional<Complex> complexOptional = complexRepository.findById(idOfComplex);
+        if (complexOptional.isPresent()) {
+            Complex complex = complexOptional.get();
+            model.addAttribute("complex", complex);
+        }
+        return "complexPage";
     }
 }
