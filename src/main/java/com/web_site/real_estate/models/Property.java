@@ -19,29 +19,19 @@ public class Property {
     private Integer id;
 
     private LocalDate delivery_date;
-    private String developer;
+
     @Column(name = "s_total", columnDefinition = "DECIMAL(5,2)")
     private Double s_total;
     private Integer bedrooms;
     private Integer baths;
     @Column(name = "ceiling_height", columnDefinition = "DECIMAL(5,2)")
     private Double ceiling_height;
-    private String facade;
-    private String wall_material;
-    private String parking;
-    private String elevator;
-    private String complex_name;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "complex_id", referencedColumnName = "id", nullable = false)
+    private Complex complex;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "district_id", referencedColumnName = "id")
-    private District district;
-    private String bus_station;
-    private String walk;
-    private String type;
     private String status;
     private Long price;
     private String image;
-    private String metro;
 }

@@ -32,13 +32,15 @@ public class Complex {
     private Integer number_of_buildings;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "district_id", referencedColumnName = "id")
+    @JoinColumn(name = "district_id", referencedColumnName = "id", nullable = false)
     private District district;
 
     @ManyToOne
-    @JoinColumn(name = "developer_id", referencedColumnName = "id")
+    @JoinColumn(name = "developer_id", referencedColumnName = "id", nullable = false)
     private Developer developer;
 
+    @OneToMany(mappedBy = "complex")
+    private List<Property> propertyList;
 
     private String bus_station;
     private String walk;
