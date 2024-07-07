@@ -1494,7 +1494,7 @@
                                     </li>
                                     <li id="menu-item-25239"
                                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children menu-item-25239 active">
-                                        <a title="Complexes" href="/complex/" data-toggle="dropdown"
+                                        <a title="Complexes" href="/complex/page/1" data-toggle="dropdown"
                                            class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Complexes
                                             <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
@@ -2135,7 +2135,7 @@
                                             <div class="complex-list-item">
                                                 <div class="list-item-img-block">
                                                     <a class="complex-item-link"
-                                                       th:href="${complex.complex_name} + '-' + ${complex.id}">
+                                                       th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}" >
                                                         <img th:src="${complex.image}" class=" ls-is-cached lazyloaded"
                                                              src="https://web-site-real-estate.com/wp-content/uploads/2021/04/Exterior2001-801-450x450.jpg"
                                                              data-src="https://web-site-real-estate.com/wp-content/uploads/2021/04/Exterior2001-801-450x450.jpg">
@@ -2150,11 +2150,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="list-item-info-block">
-                                                    <div th:object="${complex}" th:text="'Dubai, ' + *{place.name}"
+                                                    <div th:object="${complex}" th:text="'Dubai, ' + *{district.name}"
                                                          class="list-info-block-location">Dubai, Business Bay
                                                     </div>
                                                     <div class="list-info-block-title"><a
-                                                            th:href="'/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}"
+                                                            th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}"
                                                             th:text="${complex.complex_name}">Royal
                                                         Regency</a></div>
                                                     <div class="list-info-block-table">
@@ -2218,7 +2218,7 @@
                                                     </div>
                                                     <div class="list-info-block-footer">
                                                         <div class="list-info-more-details">
-                                                            <a th:href="'/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}"
+                                                            <a th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}"
                                                                class="btn btn-gold">More Details</a>
                                                         </div>
                                                         <div class="list-info-price-block">

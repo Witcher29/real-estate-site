@@ -1366,7 +1366,7 @@
                                             <li id="menu-item-61721" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61721"><a title="Settlement of townhouses" href="/buy-en/settlement-of-townhouses/">Settlement of townhouses</a></li>
                                         </ul>
                                     </li>
-                                    <li id="menu-item-25239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25239"><a title="Complexes" href="/complex/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Complexes <b class="caret"></b></a>
+                                    <li id="menu-item-25239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25239"><a title="Complexes" href="/complex/page/1" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Complexes <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
                                             <li id="menu-item-9015" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9015"><a title="All complexes" th:href="'/complex/page/1'">All complexes</a></li>
                                             <li id="menu-item-61355" class="menu-item menu-item-type-post_type menu-item-object-complex menu-item-61355"><a title="Bayz 101" href="http://ahmed1872.beget.tech/complex/bayz-101-en/">Bayz 101</a></li>
@@ -1747,7 +1747,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:object="${property}" th:text="'Dubai, ' + *{place.name}" class="main-property-location">Dubai, Palm Jumeirah</div>
+                                                    <div th:object="${property}" th:text="'Dubai, ' + *{district.name}" class="main-property-location">Dubai, Palm Jumeirah</div>
                                                     <div th:text="${property.bedrooms + (property.bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + property.complex_name}" class="main-property-title">4 bedrooms in test</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">

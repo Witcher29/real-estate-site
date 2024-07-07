@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,12 +32,13 @@ public class Complex {
     private Integer number_of_buildings;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "place_id", referencedColumnName = "id")
-    private Place place;
+    @JoinColumn(name = "district_id", referencedColumnName = "id")
+    private District district;
 
     @ManyToOne
     @JoinColumn(name = "developer_id", referencedColumnName = "id")
     private Developer developer;
+
 
     private String bus_station;
     private String walk;

@@ -60,4 +60,14 @@ public class MainController {
         }
         return "complexPage";
     }
+
+    @GetMapping("/district/page/{numberOfPage}")
+    public String districts(@PathVariable(required = false) Integer numberOfPage, Model model) {
+        List<Complex> complexes = complexRepository.findAll();
+
+        model.addAttribute("complexes", complexes);
+        if(numberOfPage != null)
+            model.addAttribute("number", numberOfPage);
+        return "all_complexes";
+    }
 }

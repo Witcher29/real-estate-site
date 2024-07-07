@@ -31,9 +31,12 @@ public class Property {
     private String parking;
     private String elevator;
     private String complex_name;
+
+
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "place_id", referencedColumnName = "id")
-    private Place place;
+    @JoinColumn(name = "district_id", referencedColumnName = "id")
+    private District district;
     private String bus_station;
     private String walk;
     private String type;
