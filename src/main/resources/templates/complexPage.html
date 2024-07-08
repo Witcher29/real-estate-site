@@ -859,9 +859,9 @@
                       <li id="menu-item-61363" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-61363"><a title="Downtown Dubai" href="http://ahmed1872.beget.tech/district/downtown-dubai-en-2/">Downtown Dubai</a></li>
                     </ul>
                   </li>
-                  <li id="menu-item-32664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32664"><a title="Developers" href="/organisation/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Developers <b class="caret"></b></a>
+                  <li id="menu-item-32664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32664"><a title="Developers" href="/organisation/page/1" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Developers <b class="caret"></b></a>
                     <ul role="menu" class=" dropdown-menu">
-                      <li id="menu-item-9013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9013"><a title="All developers" href="/organisation/">All developers</a></li>
+                      <li id="menu-item-9013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9013"><a title="All developers" href="/organisation/page/1">All developers</a></li>
                       <li id="menu-item-8672" class="menu-item menu-item-type-post_type menu-item-object-organisation menu-item-8672"><a title="Damac" href="http://ahmed1872.beget.tech/organisation/damac-en/">Damac</a></li>
                       <li id="menu-item-61364" class="menu-item menu-item-type-post_type menu-item-object-organisation menu-item-61364"><a title="Samana" href="http://ahmed1872.beget.tech/organisation/samana-en/">Samana</a></li>
                       <li id="menu-item-61365" class="menu-item menu-item-type-post_type menu-item-object-organisation menu-item-61365"><a title="Danube" href="http://ahmed1872.beget.tech/organisation/danube-en/">Danube</a></li>
@@ -1253,7 +1253,7 @@
                   </div>
                   <div class="col-12">
                     <div class="complex-top-bar">
-                      <a th:object="${complex}" th:text="*{district.name}" class="complex-top-location" th:href="'/district/' + *{district.name.replace(' ', '-')}">
+                      <a th:object="${complex}" th:text="*{district.name}" th:href="'/district/' + *{district.name.replace(' ', '-')}" class="complex-top-location" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18"
                              fill="none">
                           <path d="M7 0.5C3.6875 0.5 1 3.00885 1 6.09884C1 9.6543 5 15.2887 6.46875 17.2348C6.52972 17.3169 6.60962 17.3838 6.70195 17.4299C6.79428 17.476 6.8964 17.5 7 17.5C7.1036 17.5 7.20573 17.476 7.29805 17.4299C7.39038 17.3838 7.47028 17.3169 7.53125 17.2348C9 15.2895 13 9.65716 13 6.09884C13 3.00885 10.3125 0.5 7 0.5Z"
@@ -1656,7 +1656,7 @@
                   <path d="M3.3335 6.66683V5.00016C3.3335 4.55814 3.50909 4.13421 3.82165 3.82165C4.13421 3.50909 4.55814 3.3335 5.00016 3.3335H6.66683M3.3335 13.3335V15.0002C3.3335 15.4422 3.50909 15.8661 3.82165 16.1787C4.13421 16.4912 4.55814 16.6668 5.00016 16.6668H6.66683M13.3335 3.3335H15.0002C15.4422 3.3335 15.8661 3.50909 16.1787 3.82165C16.4912 4.13421 16.6668 4.55814 16.6668 5.00016V6.66683M13.3335 16.6668H15.0002C15.4422 16.6668 15.8661 16.4912 16.1787 16.1787C16.4912 15.8661 16.6668 15.4422 16.6668 15.0002V13.3335M10.0002 9.16683V9.17516V9.16683ZM10.0002 15.0002L7.0835 10.8335C6.80272 10.326 6.65921 9.75407 6.66714 9.17416C6.67507 8.59424 6.83418 8.02643 7.12873 7.52683C7.42328 7.02723 7.84309 6.61312 8.34668 6.32543C8.85026 6.03774 9.42019 5.88642 10.0002 5.88642C10.5801 5.88642 11.1501 6.03774 11.6536 6.32543C12.1572 6.61312 12.577 7.02723 12.8716 7.52683C13.1661 8.02643 13.3253 8.59424 13.3332 9.17416C13.3411 9.75407 13.1976 10.326 12.9168 10.8335L10.0002 15.0002Z" fill="#F2F7FF"/>
                   <path d="M3.3335 6.66683V5.00016C3.3335 4.55814 3.50909 4.13421 3.82165 3.82165C4.13421 3.50909 4.55814 3.3335 5.00016 3.3335H6.66683M3.3335 13.3335V15.0002C3.3335 15.4422 3.50909 15.8661 3.82165 16.1787C4.13421 16.4912 4.55814 16.6668 5.00016 16.6668H6.66683M13.3335 3.3335H15.0002C15.4422 3.3335 15.8661 3.50909 16.1787 3.82165C16.4912 4.13421 16.6668 4.55814 16.6668 5.00016V6.66683M13.3335 16.6668H15.0002C15.4422 16.6668 15.8661 16.4912 16.1787 16.1787C16.4912 15.8661 16.6668 15.4422 16.6668 15.0002V13.3335M10.0002 9.16683V9.17516M10.0002 15.0002L7.0835 10.8335C6.80272 10.326 6.65921 9.75407 6.66714 9.17416C6.67507 8.59424 6.83418 8.02643 7.12873 7.52683C7.42328 7.02723 7.84309 6.61312 8.34668 6.32543C8.85026 6.03774 9.42019 5.88642 10.0002 5.88642C10.5801 5.88642 11.1501 6.03774 11.6536 6.32543C12.1572 6.61312 12.577 7.02723 12.8716 7.52683C13.1661 8.02643 13.3253 8.59424 13.3332 9.17416C13.3411 9.75407 13.1976 10.326 12.9168 10.8335L10.0002 15.0002Z" stroke="#AC835C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>Location:</div>
-              <div th:object="${complex}" th:href="'/district/' + *{district.name.replace(' ', '-')}" th:text=" *{district.name}" class="property_layout_value"><a
+              <div th:object="${complex}" class="property_layout_value"><a th:href="'/district/' + *{district.name.replace(' ', '-')}" th:text=" *{district.name}"
                      >Al Furjan</a></div>
             </div>
             <div class="property_layout_line">

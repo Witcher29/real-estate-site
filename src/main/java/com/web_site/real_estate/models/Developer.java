@@ -19,7 +19,8 @@ public class Developer {
 
     private String name;
     private String additional_info;
+    private String image;
 
     @OneToMany(mappedBy = "developer",fetch = FetchType.LAZY)
-    private List<Complex> complexeList;
+    private List<Complex> complexList;
 }

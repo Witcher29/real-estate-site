@@ -95,9 +95,20 @@ public class MainController {
     @GetMapping("/organisation/page/{numberOfPage}")
     public String dievelopers(@PathVariable(required = false) Integer numberOfPage, Model model) {
         List<Developer> developers = developerRepository.findAll();
-        model.addAttribute("dievelopers", developers);
+        model.addAttribute("developers", developers);
         if(numberOfPage != null)
             model.addAttribute("number", numberOfPage);
         return "all_developers";
+    }
+
+    @GetMapping("/organisation/{developer_name}")
+    public String moreDetailsOfDevelopers(@PathVariable("developer_name") String name, Model model) {
+        String developerName = name.replace("-", " ");
+        List<Developer> developerList = developerRepository.findAllByName(developerName);
+        if (!developerList.isEmpty()) {
+            model.addAttribute("developer", developerList.get(0));
+            return "developerPage";
+        }
+        return "homePage";
     }
 }
