@@ -1540,13 +1540,13 @@
                                     </li>
                                     <li id="menu-item-25240"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25240">
-                                        <a title="Districts" href="/district/" data-toggle="dropdown"
+                                        <a title="Districts" href="/district/page/1" data-toggle="dropdown"
                                            class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Districts
                                             <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
                                             <li id="menu-item-9014"
                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9014">
-                                                <a title="All districts" href="/district/">All districts</a></li>
+                                                <a title="All districts" href="/district/page/1">All districts</a></li>
                                             <li id="menu-item-61360"
                                                 class="menu-item menu-item-type-post_type menu-item-object-district menu-item-61360">
                                                 <a title="JVC (Jumeirah Village Circle)"
@@ -2135,7 +2135,7 @@
                                             <div class="complex-list-item">
                                                 <div class="list-item-img-block">
                                                     <a class="complex-item-link"
-                                                       th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}" >
+                                                       th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')}" >
                                                         <img th:src="${complex.image}" class=" ls-is-cached lazyloaded"
                                                              src="https://web-site-real-estate.com/wp-content/uploads/2021/04/Exterior2001-801-450x450.jpg"
                                                              data-src="https://web-site-real-estate.com/wp-content/uploads/2021/04/Exterior2001-801-450x450.jpg">
@@ -2154,7 +2154,7 @@
                                                          class="list-info-block-location">Dubai, Business Bay
                                                     </div>
                                                     <div class="list-info-block-title"><a
-                                                            th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}"
+                                                            th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')}"
                                                             th:text="${complex.complex_name}">Royal
                                                         Regency</a></div>
                                                     <div class="list-info-block-table">
@@ -2218,7 +2218,7 @@
                                                     </div>
                                                     <div class="list-info-block-footer">
                                                         <div class="list-info-more-details">
-                                                            <a th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')} + '-' + ${complex.id}"
+                                                            <a th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')}"
                                                                class="btn btn-gold">More Details</a>
                                                         </div>
                                                         <div class="list-info-price-block">

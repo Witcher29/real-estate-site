@@ -1378,9 +1378,9 @@
                                             <li id="menu-item-26999" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26999"><a title="Bugatti Residences" href="https://bugatti.web-site-real-estate.com/en">Bugatti Residences</a></li>
                                         </ul>
                                     </li>
-                                    <li id="menu-item-25240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25240"><a title="Districts" href="/district/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Districts <b class="caret"></b></a>
+                                    <li id="menu-item-25240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25240"><a title="Districts" href="/district/page/1" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Districts <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
-                                            <li id="menu-item-9014" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9014"><a title="All districts" href="/district/">All districts</a></li>
+                                            <li id="menu-item-9014" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9014"><a title="All districts" href="/district/page/1">All districts</a></li>
                                             <li id="menu-item-61360" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-61360"><a title="JVC (Jumeirah Village Circle)" href="http://ahmed1872.beget.tech/district/jvc-jumeirah-village-circle-en/">JVC (Jumeirah Village Circle)</a></li>
                                             <li id="menu-item-61361" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-61361"><a title="Business Bay" href="http://ahmed1872.beget.tech/district/business-bay-en/">Business Bay</a></li>
                                             <li id="menu-item-8666" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-8666"><a title="JVT (Jumeirah Village Triangle)" href="http://ahmed1872.beget.tech/district/jvt-jumeirah-village-triangle-en/">JVT (Jumeirah Village Triangle)</a></li>
@@ -1747,7 +1747,7 @@
                                             </div>
                                             <div class="main-property-info">
                                                 <div class="main-property-info-top">
-                                                    <div th:object="${property}" th:text="'Dubai, ' + *{complex.district.name}" class="main-property-location">Dubai, Palm Jumeirah</div>
+                                                    <div th:object="${property}" th:text="*{complex.district.city} + ', '+ *{complex.district.name}" class="main-property-location">Dubai, Palm Jumeirah</div>
                                                     <div th:object="${property}" th:text="*{bedrooms + (bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + complex.complex_name}" class="main-property-title">4 bedrooms in test</div>
                                                     <div class="main-property-price-block">
                                                         <div class="main-property-price">

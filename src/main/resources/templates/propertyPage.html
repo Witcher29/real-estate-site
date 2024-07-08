@@ -849,9 +849,9 @@
                                             <li id="menu-item-26999" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26999"><a title="Bugatti Residences" href="https://bugatti.web-site-real-estate.com/en">Bugatti Residences</a></li>
                                         </ul>
                                     </li>
-                                    <li id="menu-item-25240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25240"><a title="Districts" href="/district/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Districts <b class="caret"></b></a>
+                                    <li id="menu-item-25240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25240"><a title="Districts" href="/district/page/1" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Districts <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
-                                            <li id="menu-item-9014" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9014"><a title="All districts" href="/district/">All districts</a></li>
+                                            <li id="menu-item-9014" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9014"><a title="All districts" href="/district/page/1">All districts</a></li>
                                             <li id="menu-item-61360" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-61360"><a title="JVC (Jumeirah Village Circle)" href="http://ahmed1872.beget.tech/district/jvc-jumeirah-village-circle-en/">JVC (Jumeirah Village Circle)</a></li>
                                             <li id="menu-item-61361" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-61361"><a title="Business Bay" href="http://ahmed1872.beget.tech/district/business-bay-en/">Business Bay</a></li>
                                             <li id="menu-item-8666" class="menu-item menu-item-type-post_type menu-item-object-district menu-item-8666"><a title="JVT (Jumeirah Village Triangle)" href="http://ahmed1872.beget.tech/district/jvt-jumeirah-village-triangle-en/">JVT (Jumeirah Village Triangle)</a></li>
@@ -1109,7 +1109,7 @@
                             <div class="row row-margin">
                                 <div class="col-12 col-lg-7">
                                     <div class="property-complex-data">
-                                        <div th:object="${property}" th:text="'Dubai, ' + *{complex.district.name}" class="property-complex-location">Dubai, Palm Jumeirah</div>
+                                        <div th:object="${property}" th:text="*{complex.district.city} + ', '+ *{complex.district.name}" class="property-complex-location">Dubai, Palm Jumeirah</div>
                                         <div th:object="${property}" th:text="*{complex.complex_name}" class="property-complex-name">test</div>
                                         <div class="property-complex-table">
                                             <div class="property_layout property-aside-props">
@@ -1171,12 +1171,14 @@
                                                              th:href="'/district/' + *{complex.district.name.replace(' ', '-')}">Palm Jumeirah</a>
                                                     </div>
                                                 </div>
-                                                <div th:object="${property}" th:if="*{complex != null and complex.metro != null}" class="property_layout_line">
+                                                <div th:object="${property}" >
+                                                    <div th:if="*{complex != null and complex.metro != null}" class="property_layout_line">
                                                     <div class="property_layout_name"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
                                                         <path d="M5.81258 11.0493C5.6976 10.936 5.55175 10.8593 5.39334 10.8287C5.23493 10.7982 5.07103 10.8152 4.92224 10.8776C4.82088 10.9143 4.72882 10.9729 4.6526 11.0492C4.57637 11.1255 4.51784 11.2176 4.48116 11.3191C4.42824 11.4435 4.40694 11.579 4.41916 11.7136C4.43139 11.8482 4.47676 11.9777 4.55121 12.0904C4.62566 12.2032 4.72687 12.2957 4.84578 12.3597C4.9647 12.4238 5.09762 12.4573 5.23264 12.4573C5.36766 12.4573 5.50057 12.4238 5.61949 12.3597C5.73841 12.2957 5.83962 12.2032 5.91407 12.0904C5.98852 11.9777 6.03388 11.8482 6.04611 11.7136C6.05833 11.579 6.03703 11.4435 5.98412 11.3191C5.9428 11.22 5.88477 11.1287 5.81258 11.0493ZM12.3472 11.0493C12.1892 10.9034 11.9822 10.8224 11.7673 10.8224C11.5523 10.8224 11.3453 10.9034 11.1873 11.0493C11.1151 11.1287 11.0571 11.22 11.0158 11.3191C10.9521 11.4678 10.9344 11.6322 10.965 11.7911C10.9956 11.9499 11.073 12.096 11.1873 12.2104C11.2667 12.2826 11.3579 12.3407 11.4569 12.3821C11.5546 12.4253 11.6604 12.4476 11.7673 12.4476C11.8741 12.4476 11.9799 12.4253 12.0776 12.3821C12.1766 12.3405 12.2677 12.2825 12.3472 12.2104C12.4615 12.096 12.5389 11.9499 12.5695 11.7911C12.6001 11.6322 12.5824 11.4678 12.5187 11.3191C12.4774 11.22 12.4194 11.1287 12.3472 11.0493ZM14.471 14.8147C15.0492 14.3533 15.4905 13.7425 15.7473 13.0484C16.0041 12.3542 16.0667 11.6031 15.9282 10.8759L14.7029 4.3345C14.5273 3.39737 14.03 2.55116 13.297 1.94226C12.564 1.33335 11.6415 1.00005 10.689 1H6.31003C5.35769 1.00024 4.43536 1.33363 3.70257 1.94252C2.96977 2.55141 2.47257 3.39751 2.29696 4.3345L1.07172 10.8759C0.93333 11.6031 0.995998 12.3544 1.25296 13.0485C1.50991 13.7427 1.9514 14.3534 2.52976 14.8147L1.38783 15.9578C1.30982 16.0332 1.24759 16.1235 1.20478 16.2232C1.16197 16.323 1.13944 16.4303 1.13849 16.5389C1.13755 16.6474 1.15822 16.7551 1.19929 16.8556C1.24036 16.9561 1.30101 17.0474 1.37771 17.1241C1.4544 17.2009 1.5456 17.2616 1.64599 17.3027C1.74637 17.3439 1.85393 17.3645 1.96239 17.3636C2.07085 17.3627 2.17803 17.3401 2.27769 17.2973C2.37734 17.2544 2.46747 17.1921 2.54282 17.114L4.07029 15.5849C4.40128 15.6717 4.74184 15.7164 5.08397 15.7182H11.9143C12.2569 15.7168 12.598 15.6723 12.9296 15.5858L14.4563 17.114C14.6103 17.263 14.8166 17.3454 15.0308 17.3435C15.245 17.3416 15.4498 17.2557 15.6013 17.104C15.7527 16.9524 15.8386 16.7474 15.8405 16.533C15.8424 16.3186 15.76 16.112 15.6112 15.9578L14.471 14.8147ZM3.90121 4.63622C4.00689 4.07383 4.30554 3.56608 4.74553 3.20074C5.18552 2.83539 5.73919 2.63541 6.31085 2.63536H10.6907C11.2621 2.63579 11.8153 2.83594 12.255 3.20126C12.6946 3.56657 12.993 4.07411 13.0987 4.63622L13.3821 6.14893C12.7723 6.84372 12.0215 7.40035 11.1797 7.78166C10.338 8.16297 9.42468 8.36021 8.50076 8.36021C7.57684 8.36021 6.66355 8.16297 5.82181 7.78166C4.98006 7.40035 4.22923 6.84372 3.6194 6.14893L3.90121 4.63622ZM13.7987 13.1965C13.5693 13.474 13.2816 13.6974 12.9559 13.8506C12.6303 14.0038 12.2749 14.0831 11.9151 14.0829H5.08479C4.72476 14.0828 4.36916 14.0033 4.0433 13.8501C3.71744 13.6968 3.42931 13.4736 3.19942 13.1962C2.96952 12.9188 2.8035 12.5942 2.71317 12.2453C2.62284 11.8964 2.61042 11.5319 2.67678 11.1777L3.25755 8.07701C4.72422 9.31547 6.58117 9.99477 8.49995 9.99477C10.4187 9.99477 12.2757 9.31547 13.7423 8.07701L14.3223 11.1777C14.3893 11.5319 14.3771 11.8967 14.2867 12.2457C14.1964 12.5947 14.03 12.9194 13.7995 13.1965H13.7987Z" fill="#AC835C" stroke="#F4F4F4" stroke-width="0.5"/>
                                                     </svg>Metro                                        :
                                                     </div>
                                                     <div th:text="*{complex.metro}" class="property_layout_value"></div>
+                                                    </div>
                                                 </div>
                                                 <div class="property_layout_line">
                                                     <div class="property_layout_name"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 9 10" fill="none">
@@ -1974,7 +1976,7 @@
                             Complex Name:
                         </div>
                         <div class="property_layout_value"><a th:object="${property}" th:text="*{complex.complex_name}"
-                                href="http://ahmed1872.beget.tech/complex/test-en-2/">test</a></div>
+                                th:href="'/complex/' + *{complex.complex_name}">test</a></div>
                     </div>
                     <div class="property_layout_line">
                         <div class="property_layout_name">

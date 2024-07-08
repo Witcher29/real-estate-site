@@ -17,6 +17,8 @@ public class District {
     private Integer id;
     private String name;
     private String additional_info;
+    private String image;
+    private String city;
 
     @OneToMany(mappedBy = "district",fetch = FetchType.LAZY)
     private List<Complex> complexList;
