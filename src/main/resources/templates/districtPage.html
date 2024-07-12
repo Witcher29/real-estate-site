@@ -1455,13 +1455,13 @@
                                         <a title="Home" href="/">Home</a></li>
                                     <li id="menu-item-986"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-986">
-                                        <a title="Off-plan" href="/any-en/" data-toggle="dropdown"
+                                        <a title="Off-plan" href="/property/page/1" data-toggle="dropdown"
                                            class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Off-plan
                                             <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
                                             <li id="menu-item-61717"
                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61717">
-                                                <a title="All properties" href="/any-en/">All properties</a></li>
+                                                <a title="All properties" href="/property/page/1">All properties</a></li>
                                             <li id="menu-item-9125"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9125">
                                                 <a title="Studio" href="http://ahmed1872.beget.tech/buy-en/studio/">Studio</a>
@@ -1924,7 +1924,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="section-title-more-btn">
-                                    <a href="/buy/any/" class="btn btn-gold">See all properties</a>
+                                    <a href="/property/page/1" class="btn btn-gold">See all properties</a>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -1932,24 +1932,28 @@
                                     <div class="ajax_filter_rows">
                                         <div class="row">
 
-                                            <div class="col-sm-6 col-lg-4 grid-show">
+                                            <div th:each="property, propertyStat : ${properties}" class="col-sm-6 col-lg-4 grid-show">
                                                 <div class="main-property-item">
+                                                    <img th:src="${property.image}" alt="Image" class="lazyload" src=""
+                                                         data-src="">
                                                     <div class="main-property-labels">
-                                                        <div class="main-property-labels-data">Delivery date: 12-2008
+                                                        <div th:text="'Delivery date: ' + ${#temporals.format(property.delivery_date, 'MM-yyyy')}" class="main-property-labels-data">Delivery date: 12-2008
                                                         </div>
-                                                        <div class="main-property-labels-data">Popular</div>
+                                                        <div th:text="${property.status}" class="main-property-labels-data">Popular</div>
                                                     </div>
                                                     <div class="main-property-info">
                                                         <div class="main-property-info-top">
-                                                            <div class="main-property-location">Dubai, Barsha Heights
+                                                            <div th:object="${property}"
+                                                                 th:text="*{complex.district.city + ', ' + complex.district.name}" class="main-property-location">Dubai, Barsha Heights
                                                             </div>
-                                                            <div class="main-property-title">Studio in Madison
+                                                            <div th:object="${property}"
+                                                                 th:text="*{isItStudio ? 'Studio in ' + complex.complex_name : bedrooms + (bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + complex.complex_name}" class="main-property-title">Studio in Madison
                                                                 Residency
                                                             </div>
                                                             <div class="main-property-price-block">
                                                                 <div class="main-property-price">
                                                                     <div>
-                                                                        <div class="price-val"><span
+                                                                        <div class="price-val"><span th:text="${#strings.replace(#numbers.formatInteger(property.price,0,'POINT'), '.', ' ')}"
                                                                                 class="price_inner_num">236 261</span><span
                                                                                 class="price_inner_symb">USD</span>
                                                                         </div>
@@ -2102,7 +2106,7 @@
                                                                     Studio
                                                                 </div>
                                                             </div>
-                                                            <a href="http://ahmed1872.beget.tech/property/studio-in-madison-residency-en/"
+                                                            <a th:object="${property}" th:href="'/property/' + ${property.bedrooms} + '-bedrooms-in-' + *{complex.complex_name.replace(' ', '-')} + '-' + ${property.id}"
                                                                class="main-property-button">
                                                                 More Details </a>
                                                         </div>

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
@@ -23,6 +24,11 @@ public class Property {
     @Column(name = "s_total", columnDefinition = "DECIMAL(5,2)")
     private Double s_total;
     private Integer bedrooms;
+
+    @ColumnDefault("false")
+    @Column(nullable = false)
+    private Boolean isItStudio;
+
     private Integer baths;
     @Column(name = "ceiling_height", columnDefinition = "DECIMAL(5,2)")
     private Double ceiling_height;

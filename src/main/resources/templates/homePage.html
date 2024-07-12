@@ -1354,9 +1354,9 @@
                             <div class="collapse navbar-collapse main-menu" id="navbarCollapse">
                                 <ul class="nav navbar-nav">
                                     <li id="menu-item-1348" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-1348 active"><a title="Home" href="/">Home</a></li>
-                                    <li id="menu-item-986" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-986"><a title="Off-plan" href="/any-en/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Off-plan <b class="caret"></b></a>
+                                    <li id="menu-item-986" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-986"><a title="Off-plan" href="/property/page/1" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">Off-plan <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
-                                            <li id="menu-item-61717" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61717"><a title="All properties" href="/any-en/">All properties</a></li>
+                                            <li id="menu-item-61717" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61717"><a title="All properties" href="/property/page/1">All properties</a></li>
                                             <li id="menu-item-9125" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9125"><a title="Studio" href="http://ahmed1872.beget.tech/buy-en/studio/">Studio</a></li>
                                             <li id="menu-item-9153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9153"><a title="Apartments" href="http://ahmed1872.beget.tech/buy-en/apartments/">Apartments</a></li>
                                             <li id="menu-item-9154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9154"><a title="Villa" href="http://ahmed1872.beget.tech/buy-en/villa/">Villa</a></li>
@@ -1728,7 +1728,7 @@
                                             <div class="wpb_raw_code wpb_content_element wpb_raw_html">
                                                 <div class="wpb_wrapper">
                                                     <div class="main-item-btn" style='display:flex;     flex-direction: row-reverse;'>
-                                                        <a href="/complex/" class="btn btn-gold">See more layouts</a>
+                                                        <a href="/complex/page/1" class="btn btn-gold">See more layouts</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1738,8 +1738,8 @@
                             </div>
                             <div class="main-property-block">
                                 <div class="row">
-                                    <div th:each="property, propertyStat : ${properties}" class="col-md-6 col-xl-3">
-                                        <div  th:class="${propertyStat.index == 0 ? 'main-property-item is_active' : 'main-property-item'}">
+                                    <div th:each="property, propertyStat : ${properties}" th:if="${propertyStat.index < 7}" class="col-md-6 col-xl-3">
+                                        <div th:class="${propertyStat.index == 0 ? 'main-property-item is_active' : 'main-property-item'}">
                                             <img th:src="${property.image}" alt="Image" class="lazyload" src="" data-src="">
                                             <div class="main-property-labels">
                                                 <div th:text="'Delivery date: ' + ${#temporals.format(property.delivery_date, 'MM-yyyy')}" class="main-property-labels-data">Delivery date: 12-2022</div>
@@ -1808,7 +1808,7 @@
                                             <div class="main-property-more-descr">
                                                 See all layouts </div>
                                             <div class="main-property-more-button-block">
-                                                <a href="/buy-en/" class="main-property-more-button">Go to catalog</a>
+                                                <a href="/property/page/1" class="main-property-more-button">Go to catalog</a>
                                                 </a>
                                             </div>
                                         </div>

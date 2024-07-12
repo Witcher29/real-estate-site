@@ -14,8 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class MainController {
@@ -47,6 +46,11 @@ public class MainController {
         if (propertyOptional.isPresent()) {
             Property property = propertyOptional.get();
             model.addAttribute("property", property);
+
+            List<Property> properties = propertyRepository.findAllByBedrooms(property.getBedrooms());
+            Collections.shuffle(properties, new Random());
+            properties = properties.subList(0, 6);
+            model.addAttribute("properties", properties);
         }
         return "propertyPage";
     }
@@ -64,9 +68,21 @@ public class MainController {
     @GetMapping("/complex/{complex_name}")
     public String moreDetailsOfComplexes(@PathVariable("complex_name") String name, Model model) {
         String complexName = name.replace("-", " ");
+
+        List<Complex> complexesForShuffle = complexRepository.findAll();
+        Collections.shuffle(complexesForShuffle, new Random());
+        List<Complex> endList = new ArrayList<>();
+
+        for (int i=0; i<complexesForShuffle.size(); i++) {
+            if (!(complexesForShuffle.get(i).getComplex_name().equals(complexName)))
+                endList.add(complexesForShuffle.get(i));
+            if (endList.size() == 6)
+                break;
+        }
         List<Complex> complexList = complexRepository.findAllByComplexName(complexName);
         if (!complexList.isEmpty()) {
             model.addAttribute("complex", complexList.get(0));
+            model.addAttribute("complexes", endList);
             return "complexPage";
         }
         return "homePage";
@@ -87,13 +103,24 @@ public class MainController {
         List<District> districtList = districtRepository.findAllByName(districtName);
         if (!districtList.isEmpty()) {
             model.addAttribute("district", districtList.get(0));
+
+            List<Property> properties = new ArrayList<>();
+            int i = 0;
+            while (properties.size() < 6 && i <= districtList.get(0).getComplexList().size()-1) {
+                properties.addAll(districtList.get(0).getComplexList().get(i).getPropertyList());
+                i++;
+            }
+             if (properties.size() > 5)
+                 properties = properties.subList(0, 6);
+            model.addAttribute("properties", properties);
+
             return "districtPage";
         }
         return "homePage";
     }
 
     @GetMapping("/organisation/page/{numberOfPage}")
-    public String dievelopers(@PathVariable(required = false) Integer numberOfPage, Model model) {
+    public String developers(@PathVariable Integer numberOfPage, Model model) {
         List<Developer> developers = developerRepository.findAll();
         model.addAttribute("developers", developers);
         if(numberOfPage != null)
@@ -107,8 +134,28 @@ public class MainController {
         List<Developer> developerList = developerRepository.findAllByName(developerName);
         if (!developerList.isEmpty()) {
             model.addAttribute("developer", developerList.get(0));
+
+            List<Property> properties = new ArrayList<>();
+            int i = 0;
+            while (properties.size() < 6 && i <= developerList.get(0).getComplexList().size()-1) {
+                properties.addAll(developerList.get(0).getComplexList().get(i).getPropertyList());
+                i++;
+            }
+            if (properties.size() > 5)
+                properties = properties.subList(0, 6);
+            model.addAttribute("properties", properties);
+
             return "developerPage";
         }
         return "homePage";
+    }
+
+    @GetMapping("/property/page/{numberOfPage}")
+    public String properties(@PathVariable(required = false) Integer numberOfPage, Model model) {
+        List<Property> properties = propertyRepository.findAll();
+        model.addAttribute("properties", properties);
+        if(numberOfPage != null)
+            model.addAttribute("number", numberOfPage);
+        return "all_properties";
     }
 }
