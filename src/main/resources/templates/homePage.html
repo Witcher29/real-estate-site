@@ -1398,7 +1398,7 @@
                                             <li id="menu-item-61367" class="menu-item menu-item-type-post_type menu-item-object-organisation menu-item-61367"><a title="Nshama" href="http://ahmed1872.beget.tech/organisation/nshama-en/">Nshama</a></li>
                                         </ul>
                                     </li>
-                                    <li id="menu-item-992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-992"><a title="About us" href="/about-us-en/" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">About us <b class="caret"></b></a>
+                                    <li id="menu-item-992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-992"><a title="About us" href="/about-us" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">About us <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
                                             <li id="menu-item-9192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9192"><a title="Our experts" href="http://ahmed1872.beget.tech/agent/">Our experts</a></li>
                                             <li id="menu-item-1350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1350"><a title="Blog" href="http://ahmed1872.beget.tech/blog-en/">Blog</a></li>
@@ -1406,7 +1406,7 @@
                                             <li id="menu-item-9340" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9340"><a title="Podcasts" href="/podcast/">Podcasts</a></li>
                                         </ul>
                                     </li>
-                                    <li id="menu-item-1358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358"><a title="Contact us" href="http://ahmed1872.beget.tech/contact-us-en/">Contact us</a></li>
+                                    <li id="menu-item-1358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358"><a title="Contact us" href="/contact-us">Contact us</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -1998,7 +1998,7 @@
                                         <div class="wpb_raw_code wpb_content_element wpb_raw_html">
                                             <div class="wpb_wrapper">
                                                 <div class="main-item-btn" style='display:flex;     flex-direction: row-reverse;'>
-                                                    <a href="/complex/" class="btn btn-gold">See more buildings</a>
+                                                    <a href="/complex/page/1" class="btn btn-gold">See more buildings</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -2013,67 +2013,17 @@
             </div>
         </div> -->
                         <div class="row row-complex">
-                            <div class="col-md-6 col-lg-3">
-                                <a class="main_complex_item" href="http://ahmed1872.beget.tech/complex/hartland-ii-villas-en/">
-                                    <img class="lazyload"  data-src="
-Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_html/wp-content/plugins/wt-cozy-shortcodes/inc/shortcode-complex-gallery.php on line 129
-" srcset>
+                            <div th:each="complex : ${complexes}" class="col-md-6 col-lg-3">
+                                <a class="main_complex_item" th:href="'/complex/' + ${complex.complex_name.replace(' ', '-')}">
+                                    <img th:src="${complex.image}" class="lazyload"  data-src="" srcset>
                                     <div class="main_complex_link">
                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M8.76508 7.70318C8.66332 7.70285 8.56564 7.66214 8.4935 7.59C8.42136 7.51786 8.38065 7.42018 8.38032 7.31842L8.36525 1.72909L1.07538 9.01896C1.00355 9.09078 0.905988 9.13099 0.804147 9.13072C0.702306 9.13045 0.60453 9.08974 0.532329 9.01754C0.460128 8.94534 0.419415 8.84756 0.419149 8.74572C0.418883 8.64388 0.459084 8.54632 0.530908 8.47449L7.82078 1.18462L2.23145 1.16955C2.13201 1.16578 2.03771 1.12356 1.96842 1.0518C1.89913 0.980034 1.86026 0.884321 1.86 0.784825C1.85974 0.685329 1.89811 0.589818 1.96702 0.518414C2.03594 0.44701 2.13002 0.405289 2.22944 0.402039L8.74603 0.41908C8.84779 0.419409 8.94547 0.460116 9.01761 0.532259C9.08975 0.604401 9.13046 0.702079 9.13079 0.803838L9.14783 7.32043C9.14803 7.42219 9.10784 7.51965 9.03607 7.59142C8.9643 7.66318 8.86684 7.70338 8.76508 7.70318Z" fill="white"/>
                                         </svg>
                                     </div>
                                     <div class="main_complex_bottom">
-                                        <div class="main_complex_title">Hartland II Villas</div>
-                                        <div class="main_complex_price price-val"><span class="complex-item-from">From</span> <span class="price_inner_num">6 133 361</span><span class="price_inner_symb">USD</span></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 col-lg-3">
-                                <a class="main_complex_item" href="http://ahmed1872.beget.tech/complex/residential-tower-en/">
-                                    <img class="lazyload"  data-src="
-Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_html/wp-content/plugins/wt-cozy-shortcodes/inc/shortcode-complex-gallery.php on line 129
-" srcset>
-                                    <div class="main_complex_link">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8.76508 7.70318C8.66332 7.70285 8.56564 7.66214 8.4935 7.59C8.42136 7.51786 8.38065 7.42018 8.38032 7.31842L8.36525 1.72909L1.07538 9.01896C1.00355 9.09078 0.905988 9.13099 0.804147 9.13072C0.702306 9.13045 0.60453 9.08974 0.532329 9.01754C0.460128 8.94534 0.419415 8.84756 0.419149 8.74572C0.418883 8.64388 0.459084 8.54632 0.530908 8.47449L7.82078 1.18462L2.23145 1.16955C2.13201 1.16578 2.03771 1.12356 1.96842 1.0518C1.89913 0.980034 1.86026 0.884321 1.86 0.784825C1.85974 0.685329 1.89811 0.589818 1.96702 0.518414C2.03594 0.44701 2.13002 0.405289 2.22944 0.402039L8.74603 0.41908C8.84779 0.419409 8.94547 0.460116 9.01761 0.532259C9.08975 0.604401 9.13046 0.702079 9.13079 0.803838L9.14783 7.32043C9.14803 7.42219 9.10784 7.51965 9.03607 7.59142C8.9643 7.66318 8.86684 7.70338 8.76508 7.70318Z" fill="white"/>
-                                        </svg>
-                                    </div>
-                                    <div class="main_complex_bottom">
-                                        <div class="main_complex_title">Residential Tower</div>
-                                        <div class="main_complex_price price-val"><span class="complex-item-from">From</span> <span class="price_inner_num">301 320</span><span class="price_inner_symb">USD</span></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 col-lg-3">
-                                <a class="main_complex_item" href="http://ahmed1872.beget.tech/complex/mar-casa-en/">
-                                    <img class="lazyload"  data-src="
-Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_html/wp-content/plugins/wt-cozy-shortcodes/inc/shortcode-complex-gallery.php on line 129
-" srcset>
-                                    <div class="main_complex_link">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8.76508 7.70318C8.66332 7.70285 8.56564 7.66214 8.4935 7.59C8.42136 7.51786 8.38065 7.42018 8.38032 7.31842L8.36525 1.72909L1.07538 9.01896C1.00355 9.09078 0.905988 9.13099 0.804147 9.13072C0.702306 9.13045 0.60453 9.08974 0.532329 9.01754C0.460128 8.94534 0.419415 8.84756 0.419149 8.74572C0.418883 8.64388 0.459084 8.54632 0.530908 8.47449L7.82078 1.18462L2.23145 1.16955C2.13201 1.16578 2.03771 1.12356 1.96842 1.0518C1.89913 0.980034 1.86026 0.884321 1.86 0.784825C1.85974 0.685329 1.89811 0.589818 1.96702 0.518414C2.03594 0.44701 2.13002 0.405289 2.22944 0.402039L8.74603 0.41908C8.84779 0.419409 8.94547 0.460116 9.01761 0.532259C9.08975 0.604401 9.13046 0.702079 9.13079 0.803838L9.14783 7.32043C9.14803 7.42219 9.10784 7.51965 9.03607 7.59142C8.9643 7.66318 8.86684 7.70338 8.76508 7.70318Z" fill="white"/>
-                                        </svg>
-                                    </div>
-                                    <div class="main_complex_bottom">
-                                        <div class="main_complex_title">Mar Casa</div>
-                                        <div class="main_complex_price price-val"><span class="complex-item-from">From</span> <span class="price_inner_num">346 676</span><span class="price_inner_symb">USD</span></div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6 col-lg-3">
-                                <a class="main_complex_item" href="http://ahmed1872.beget.tech/complex/waves-opulence-en/">
-                                    <img class="lazyload"  data-src="
-Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_html/wp-content/plugins/wt-cozy-shortcodes/inc/shortcode-complex-gallery.php on line 129
-" srcset>
-                                    <div class="main_complex_link">
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8.76508 7.70318C8.66332 7.70285 8.56564 7.66214 8.4935 7.59C8.42136 7.51786 8.38065 7.42018 8.38032 7.31842L8.36525 1.72909L1.07538 9.01896C1.00355 9.09078 0.905988 9.13099 0.804147 9.13072C0.702306 9.13045 0.60453 9.08974 0.532329 9.01754C0.460128 8.94534 0.419415 8.84756 0.419149 8.74572C0.418883 8.64388 0.459084 8.54632 0.530908 8.47449L7.82078 1.18462L2.23145 1.16955C2.13201 1.16578 2.03771 1.12356 1.96842 1.0518C1.89913 0.980034 1.86026 0.884321 1.86 0.784825C1.85974 0.685329 1.89811 0.589818 1.96702 0.518414C2.03594 0.44701 2.13002 0.405289 2.22944 0.402039L8.74603 0.41908C8.84779 0.419409 8.94547 0.460116 9.01761 0.532259C9.08975 0.604401 9.13046 0.702079 9.13079 0.803838L9.14783 7.32043C9.14803 7.42219 9.10784 7.51965 9.03607 7.59142C8.9643 7.66318 8.86684 7.70338 8.76508 7.70318Z" fill="white"/>
-                                        </svg>
-                                    </div>
-                                    <div class="main_complex_bottom">
-                                        <div class="main_complex_title">Waves Opulence</div>
-                                        <div class="main_complex_price price-val"><span class="complex-item-from">From</span> <span class="price_inner_num">807 292</span><span class="price_inner_symb">USD</span></div>
+                                        <div th:text="${complex.complex_name}" class="main_complex_title">Hartland II Villas</div>
+                                        <div class="main_complex_price price-val"><span class="complex-item-from">From</span> <span th:text="${#strings.replace(#numbers.formatInteger(complex.price,0,'POINT'), '.', ' ')}" class="price_inner_num">6 133 361</span><span class="price_inner_symb">USD</span></div>
                                     </div>
                                 </a>
                             </div>
@@ -2095,60 +2045,13 @@ Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_
                             </div>
                         </div>
                         <div class="row row-organisation">
-                            <div class="col-6 col-lg-4 col-xl-2">
-                                <a href="http://ahmed1872.beget.tech/organisation/emaar-en/" class="main_organisation_item">
+                            <div th:each="developer : ${developers}" class="col-6 col-lg-4 col-xl-2">
+                                <a th:href="'/organisation/' + ${developer.name.replace(' ', '-')}" class="main_organisation_item">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="139" height="28" viewBox="0 0 139 28" fill="none">
                                         <path d="M20.3418 24.8656L19.9304 27.5916H0.248047C1.06243 25.7057 1.01099 24.6427 1.01099 23.2797V4.54035C1.01099 3.22019 1.06243 2.06292 0.248047 0.228415H6.14588H19.4503L19.4846 3.00588C19.1245 2.86015 18.8331 2.73157 18.5673 2.61155C17.8558 2.34581 16.9557 2.09721 16.0213 2.10578C14.5297 2.10578 8.27184 2.10578 5.49438 2.10578V12.8213H17.8472L17.2386 14.9301H5.49438V25.6543C7.76607 25.6543 15.0269 25.6543 16.63 25.6543C18.5073 25.6885 20.3761 24.6256 20.3761 24.6256L20.3247 24.857C20.3247 24.8656 20.3333 24.8656 20.3418 24.8656ZM49.9682 27.5916C50.2339 26.2457 50.2339 24.3427 50.0196 22.7911L48.2708 9.89812L38.7211 27.583H36.9038L27.1998 9.10088L25.3138 23.0739C25.1081 24.6856 25.0481 26.7258 25.2195 27.5916H21.8077C22.4678 26.1943 22.6307 25.5857 22.9393 23.2883L26.0254 0.228415H27.5941L38.9183 21.7452L50.2339 0.228415H51.4169L54.6058 23.2368C54.923 25.5257 55.163 26.1857 55.7974 27.5916H49.9682ZM78.7115 27.5916L74.1681 17.5704H65.0299L60.5465 27.5916H60.1608H56.9975H56.9804C58.112 26.1857 58.4977 25.5342 59.295 23.7855L69.8905 0.228415H71.082L81.5061 23.1254C82.6205 25.3628 83.1435 26.0572 84.7379 27.5916H78.7115ZM107.301 27.5916L102.757 17.5704H93.619L89.1356 27.5916H88.7584H85.5866H85.5695C86.701 26.1857 87.0868 25.5342 87.884 23.7855L98.4795 0.228415H99.6711L110.104 23.1254C111.218 25.3628 111.741 26.0572 113.336 27.5916H107.301ZM133.206 27.6088C130.472 25.1142 126.931 21.8052 122.499 16.5589C121.231 15.0759 120.339 14.8873 119.765 14.853V23.2797C119.765 24.6341 119.765 25.7057 120.536 27.5916H114.519C115.333 25.7057 115.282 24.6427 115.282 23.2797V4.5232C115.282 3.20305 115.333 2.04577 114.519 0.211271H120.416C124.445 0.211271 133.969 -0.148772 133.969 7.72072C133.969 11.8784 130.669 14.1158 126.794 14.6815L125.646 14.793C125.646 14.793 138.213 27.0773 138.753 27.6088H133.206ZM126.083 13.1128L126.074 13.1214C128.612 12.1612 129.469 9.75239 129.383 7.71215C129.289 5.74906 128.406 1.47999 119.773 1.82289V13.49C119.773 13.49 124.608 13.7557 125.963 13.1642C126.04 13.1299 126.083 13.1128 126.083 13.1128ZM94.4934 15.6588H101.874L98.1538 7.48927L94.4934 15.6588ZM65.9129 15.6588H73.2937L69.5733 7.48927L65.9129 15.6588Z"/>
                                     </svg>                        </a>
                             </div>
-                            <div class="col-6 col-lg-4 col-xl-2">
-                                <a href="http://ahmed1872.beget.tech/organisation/arada-en/" class="main_organisation_item">
-                                    <svg width="141" height="22" viewBox="0 0 141 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g mask="url(#mask0_2603_2147)">
-                                            <path d="M23.1515 0.954102L25.2943 6.87358C21.3922 8.54147 17.1904 9.39945 12.945 9.39524C8.69874 9.39987 4.49608 8.54117 0.59375 6.8716L2.73658 0.954102C5.94975 2.38616 9.43054 3.12356 12.95 3.11779C16.4655 3.12239 19.9421 2.38501 23.1515 0.954102ZM12.945 15.6766C9.42726 15.6817 5.94823 14.9443 2.73658 13.513L0.59375 19.4305C4.49608 21.1 8.69874 21.9587 12.945 21.9541C17.1903 21.9582 21.392 21.1006 25.2943 19.4334L23.1515 13.513C19.9406 14.9446 16.4622 15.682 12.945 15.6766ZM119.394 11.0625C119.417 12.5222 119.142 13.9714 118.585 15.3213C118.027 16.6712 117.2 17.8935 116.152 18.9131C115.104 19.9328 113.859 20.7285 112.492 21.2514C111.125 21.7743 109.666 22.0134 108.203 21.9541H101.195V0.954102H108.655C115.754 0.954102 119.394 5.89854 119.394 11.0625ZM114.535 11.0625C114.535 8.06222 112.75 5.40607 108.752 5.40607H106V17.5021H108.155C112.468 17.5021 114.535 14.313 114.535 11.0625ZM77.2855 21.9541L72.625 13.153C73.6545 12.6325 74.5132 11.8292 75.0997 10.8377C75.6862 9.84633 75.9761 8.70825 75.935 7.55789C75.935 4.26885 73.6246 0.954102 68.0419 0.954102H59.6302V21.9541H64.4335V14.134H67.8822L71.9111 21.9541H77.2855ZM64.4335 10.043V5.40409H67.0305C69.4976 5.40409 70.8739 5.87085 70.8739 7.67853C70.8739 9.69883 69.2873 10.035 67.0305 10.035L64.4335 10.043ZM50.0217 0.954102H44.1009L36.5975 21.9541H41.5307L42.9437 17.7939H51.1789L52.5919 21.9541H57.5251L50.0217 0.954102ZM44.3974 13.513L47.0618 5.66714L49.7252 13.513H44.3974ZM91.4346 0.954102H85.5138L78.0104 21.9541H82.9435L84.3566 17.7939H92.5917L94.0018 21.9541H98.935L91.4346 0.954102ZM85.8102 13.513L88.4737 5.66714L91.1381 13.513H85.8102ZM133.09 0.954102H127.17L119.666 21.9541H124.599L126.012 17.7939H134.248L135.661 21.9541H140.594L133.09 0.954102ZM127.466 13.513L130.13 5.66714L132.794 13.513H127.466Z"/>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="col-6 col-lg-4 col-xl-2">
-                                <a href="http://ahmed1872.beget.tech/organisation/nakheel-en/" class="main_organisation_item">
-                                    <svg width="148" height="27" viewBox="0 0 148 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.9658 0.45699H22.8338V26.4541H11.4252L5.95893 0.680854V26.4512H0.09375V0.454102H11.5364L16.9658 26.2295V0.45699ZM41.5992 0.45699H30.0843L24.7272 26.4541H30.5222L31.5802 21.2908H40.109L41.167 26.4541H46.962L41.5992 0.45699ZM32.563 16.6503L35.8432 0.680854L39.1234 16.6496L32.563 16.6503ZM60.4745 16.0191L69.2613 0.45699H62.7357L55.3378 13.6V0.45699H48.8533V26.4541H55.3413V16.4625H59.35L62.7392 26.4512H69.2996L65.7615 16.0163H60.4745V16.0191ZM85.1441 10.5966H80.6969L77.7823 15.3873V0.45699H71.2943V26.4541H77.7823V15.6805H85.1441V26.4512H91.6322V0.454102H85.1441V10.5937V10.5966ZM94.7671 26.4541H110.911V21.623H101.254V15.5721H108.978V10.7446H103.987L101.254 15.2002V5.28523H110.91V0.45699H94.7671V26.4541ZM113.46 26.4541H129.605V21.623H119.948V15.5721H127.671V10.7446H122.68L119.947 15.2002V5.28523H129.603V0.45699H113.46V26.4541ZM138.641 21.623V0.45699H132.153V26.4541H147.094V21.623H138.638H138.641Z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="col-6 col-lg-4 col-xl-2">
-                                <a href="http://ahmed1872.beget.tech/organisation/sobha-en/" class="main_organisation_item">
-                                    <svg width="232" height="151" viewBox="0 0 232 151" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.404297" y="0.454102" width="231.095" height="150" rx="10"/>
-                                        <g mask="url(#mask0_2603_2123)">
-                                            <path d="M115.874 64.4414C118.164 63.6048 119.747 61.9808 119.747 59.4095C119.747 55.4332 116.113 53.7273 111.499 53.7273H106.246V78.4862H113.113C118.307 78.4862 122.814 76.3811 122.814 71.608C122.814 67.8337 119.999 65.2444 115.875 64.4422M112.786 77.1008H109.88V55.1128H111.786C115.202 55.1128 116.346 56.7727 116.346 59.2699C116.346 59.6855 116.623 63.7701 113.267 64.5131C114.651 64.8457 115.935 65.5071 117.009 66.4412C117.677 67.0443 118.2 67.7893 118.542 68.6214C118.883 69.4534 119.033 70.3515 118.982 71.2494C118.982 74.7134 117.075 77.1015 112.788 77.1015" />
-                                            <path d="M54.1289 77.6598C55.9036 78.5026 57.8465 78.9313 59.8111 78.9135C63.0124 78.9135 68.6517 77.7642 68.6517 72.1491C68.6517 68.2142 65.8082 66.0023 61.1248 62.8275C58.9581 61.2884 56.0063 59.7322 56.0063 57.1999C56.0063 55.0948 57.9555 53.8333 60.6484 53.8333C62.5416 53.8679 64.3877 54.4291 65.9798 55.4542L64.645 53.1277C63.3835 52.6452 62.0391 52.4162 60.689 52.4541C57.1127 52.4541 52.9337 53.9667 52.9337 58.2275C52.9337 61.598 55.5845 63.5019 59.9857 66.6556C62.0277 68.1081 65.2367 70.4089 65.2367 73.2352C65.2367 75.886 63.166 77.5358 59.8321 77.5358C57.0889 77.4614 54.4593 76.4239 52.4043 74.6051L54.1289 77.6598Z" />
-                                            <path d="M86.3518 78.9111C79.7247 78.9111 74.5859 73.6258 74.5859 66.1052C74.5859 58.7686 79.7278 53.3008 86.3518 53.3008C92.9758 53.3008 98.1021 58.7686 98.1021 66.1067C98.1021 73.6281 92.9766 78.9127 86.3518 78.9127M94.4681 66.1067C94.4681 59.4017 91.2153 54.6816 86.351 54.6816C81.4867 54.6816 78.2355 59.404 78.2355 66.1067C78.2355 72.8461 81.4883 77.5319 86.3526 77.5319C91.2169 77.5319 94.4681 72.8461 94.4681 66.1067Z" />
-                                            <path d="M172.703 71.219H163.143L160.164 78.4862H158.746L169.123 53.1776L179.498 78.4862H175.682L172.703 71.219ZM163.709 69.8382H172.14L167.924 59.5366L163.709 69.8382Z" />
-                                            <path d="M148.129 53.7335V63.9026H134.849V53.7335H131.215V78.487H134.849V65.2826H148.129V78.487H151.763V53.7335H148.129Z" />
-                                            <path d="M91.7704 98.4533H90.3008V90.9288H93.9052C95.6118 90.9288 96.471 91.7537 96.471 93.0635V93.4713C96.4768 93.9464 96.3163 94.4087 96.0173 94.778C95.7183 95.1473 95.2997 95.4005 94.8337 95.4937L96.7657 98.4565H95.1378L93.3181 95.6201H91.7704V98.4533ZM91.7704 94.4872H93.5785C94.5382 94.4872 95.0021 94.0802 95.0021 93.437V93.1314C95.0021 92.4531 94.6061 92.0913 93.6346 92.0913H91.7704V94.4872Z" />
-                                            <path d="M105.812 90.9288V92.149H101.577V94.0584H104.877V95.21H101.577V97.2324H105.812V98.4533H100.143V90.9288H105.812Z" />
-                                            <path d="M113.475 96.8823H110.141L109.554 98.4533H108.072L111.023 90.8719H112.649L115.598 98.4533H114.062L113.475 96.8823ZM110.56 95.776H113.055L111.813 92.4772H111.79L110.56 95.776Z" />
-                                            <path d="M120.212 90.9288V97.1778H123.975V98.4541H118.744V90.9288H120.212Z" />
-                                            <path d="M132.077 90.9288V92.1934H129.525V98.4541H128.055V92.1934H125.512V90.9288H132.077Z" />
-                                            <path d="M136.055 90.9288L138.044 94.3188L140.01 90.9288H141.603L138.733 95.5733V98.458H137.264V95.5733L134.406 90.9288H136.055Z" />
-                                        </g>
-                                    </svg>                        </a>
-                            </div>
-                            <div class="col-6 col-lg-4 col-xl-2">
-                                <a href="http://ahmed1872.beget.tech/organisation/omniyat-en/" class="main_organisation_item">
-                                    <svg width="183" height="25" viewBox="0 0 183 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M182.649 0.634094H162.859V4.53409C165.219 4.03409 167.979 3.99409 171.009 3.99409C171.009 10.7241 170.979 21.9041 170.469 24.2641H175.049C174.549 21.9041 174.509 10.7341 174.509 3.99409C177.539 3.99409 180.299 4.02409 182.659 4.53409V0.634094H182.649Z" />
-                                        <path d="M137.1 24.2741H141.98C142.32 21.8841 146.59 12.9941 149.05 7.9441C151.54 12.9941 155.92 21.8841 156.25 24.2741H161.47C159.85 21.9141 154.13 10.5041 149.28 0.2341C144.44 10.5041 138.99 21.9141 137.1 24.2741Z" />
-                                        <path d="M122.959 18.7141C122.959 20.7341 122.929 22.7241 122.589 24.2641H127.099C126.759 22.7141 126.729 20.7341 126.729 18.7141V15.5141C130.499 8.95409 134.239 2.99409 136.219 0.634094H131.339C130.799 3.02409 127.299 8.71409 125.109 12.1841C122.849 8.71409 119.249 3.02409 118.679 0.634094H113.459C115.409 2.99409 119.179 8.94409 122.949 15.5141V18.7141H122.959Z" />
-                                        <path d="M105.858 24.2741C105.358 21.9141 105.318 16.4341 105.318 12.4941C105.318 8.5541 105.348 3.0041 105.858 0.644104H101.318C101.818 3.0041 101.858 8.5541 101.858 12.4941C101.858 16.4341 101.828 21.9241 101.318 24.2741H105.858Z" />
-                                        <path d="M73.9502 24.2741C73.4802 22.0541 73.4102 13.0341 73.4102 6.80409C78.3602 12.6641 83.2102 18.3141 86.8802 24.2741H90.8902C90.3902 21.6841 90.3202 16.4341 90.3202 12.4541C90.3202 8.55409 90.3902 2.99409 90.8902 0.634094H86.3502C86.8202 2.85409 86.8902 11.8741 86.8902 18.1041C81.9402 12.2141 77.0902 6.45409 73.4202 0.634094H69.4102C69.9102 2.99409 69.9502 8.51409 69.9502 12.4541C69.9502 16.3941 69.9202 21.9141 69.4102 24.2741H73.9502Z" />
-                                        <path d="M12.6793 24.6741C19.7193 24.6741 25.0293 19.3841 25.0293 12.3541C25.0293 5.3841 19.8493 0.2341 12.8793 0.2341C5.8493 0.2341 0.529297 5.5241 0.529297 12.5541C0.529297 19.5241 5.7093 24.6741 12.6793 24.6741ZM12.4493 3.2641C17.8693 3.2641 21.1393 7.6441 21.1393 12.8541C21.1393 18.1441 17.9393 21.6441 13.1293 21.6441C7.7093 21.6441 4.4393 17.2641 4.4393 12.0541C4.4293 6.7641 7.6293 3.2641 12.4493 3.2641Z" />
-                                        <path d="M54.2891 0.634094C53.5791 2.82409 49.6391 9.5841 46.7491 14.2641C43.7491 9.5841 39.7091 2.81409 38.9691 0.634094H34.2891C34.7891 2.99409 34.8291 8.51409 34.8291 12.4541C34.8291 16.3941 34.7991 21.9141 34.2891 24.2741H38.8291C38.3591 22.0141 38.2891 12.0241 38.2891 6.90409C41.2191 11.3841 44.0491 16.0941 45.9991 19.5941H47.2491C49.1391 16.0641 52.0291 11.3441 54.9591 6.83409C54.9591 11.9141 54.8891 21.9841 54.4191 24.2741H58.9591C58.4591 21.9141 58.4191 16.3941 58.4191 12.4541C58.4191 8.51409 58.4491 2.99409 58.9591 0.634094H54.2891Z" />
-                                    </svg>
-                                </a>
-                            </div>
+
                             <div class="col-6 col-lg-4 col-xl-2">
                                 <a href="/organisation/page/1" class="main_organisation_item main_organisation_moree">
                                     <div class="main_organisation_more_title">+</div>
@@ -2265,143 +2168,24 @@ Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_
                 <div class="vc_column-inner ">
                     <div class="wpb_wrapper">
                         <div class="row row-agents">
-                            <div class="main-agents-item col-sm-6 col-md-4 col-xl-2">
+                            <div th:each="broker : ${brokers}" class="main-agents-item col-sm-6 col-md-4 col-xl-2">
                                 <div class="main-agents-image">
-                                    <img class="lazyload" data-src="http://ahmed1872.beget.tech/wp-content/uploads/2021/04/Instagram-post-11-450x450.png" srcset>
-                                    <a href="http://ahmed1872.beget.tech/agent/asel-2/" class="main-agents-btn">
+                                    <img th:src="${broker.image}" class="lazyload" data-src="" srcset>
+                                    <a th:href="${'/agent/' + broker.name.replace(' ', '-') + '-' + broker.id}" class="main-agents-btn">
                                         Contact us                            </a>
                                 </div>
-                                <div class="main-agents-language">
+                                <div th:text="${broker.languages}" class="main-agents-language">
                                     Russian, English </div>
                                 <div class="main-agents-name">
-                                    <a href="http://ahmed1872.beget.tech/agent/asel-2/">Asel</a>
+                                    <a th:href="${'/agent/' + broker.name.replace(' ', '-') + '-' + broker.id}"
+                                        th:text="${broker.name}">Asel</a>
                                 </div>
                                 <div class="main-agents-contacts">
                                     <div class="main-agents-title">
                                         Contact us:
                                     </div>
                                     <div class="main-agents-soc">
-                                        <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
-                                                <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-agents-item col-sm-6 col-md-4 col-xl-2">
-                                <div class="main-agents-image">
-                                    <img class="lazyload" data-src="http://ahmed1872.beget.tech/wp-content/uploads/2021/04/Instagram-post-7-450x450.png" srcset>
-                                    <a href="http://ahmed1872.beget.tech/agent/ruslan-jamalutdinov/" class="main-agents-btn">
-                                        Contact us                            </a>
-                                </div>
-                                <div class="main-agents-language">
-                                    Russian, English </div>
-                                <div class="main-agents-name">
-                                    <a href="http://ahmed1872.beget.tech/agent/ruslan-jamalutdinov/">Ruslan Jamalutdinov</a>
-                                </div>
-                                <div class="main-agents-contacts">
-                                    <div class="main-agents-title">
-                                        Contact us:
-                                    </div>
-                                    <div class="main-agents-soc">
-                                        <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
-                                                <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-agents-item col-sm-6 col-md-4 col-xl-2">
-                                <div class="main-agents-image">
-                                    <img class="lazyload" data-src="http://ahmed1872.beget.tech/wp-content/uploads/2021/04/Instagram-post-8-450x450.png" srcset>
-                                    <a href="http://ahmed1872.beget.tech/agent/egor-slobodyanyuk/" class="main-agents-btn">
-                                        Contact us                            </a>
-                                </div>
-                                <div class="main-agents-language">
-                                    Russian, Ukrainian </div>
-                                <div class="main-agents-name">
-                                    <a href="http://ahmed1872.beget.tech/agent/egor-slobodyanyuk/">Egor Slobodyanyuk</a>
-                                </div>
-                                <div class="main-agents-contacts">
-                                    <div class="main-agents-title">
-                                        Contact us:
-                                    </div>
-                                    <div class="main-agents-soc">
-                                        <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
-                                                <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-agents-item col-sm-6 col-md-4 col-xl-2">
-                                <div class="main-agents-image">
-                                    <img class="lazyload" data-src="http://ahmed1872.beget.tech/wp-content/uploads/2021/04/Instagram-post-1-450x450.png" srcset>
-                                    <a href="http://ahmed1872.beget.tech/agent/sanzhar-yuldashev/" class="main-agents-btn">
-                                        Contact us                            </a>
-                                </div>
-                                <div class="main-agents-language">
-                                    Russian, English </div>
-                                <div class="main-agents-name">
-                                    <a href="http://ahmed1872.beget.tech/agent/sanzhar-yuldashev/">Sanzhar Yuldashev</a>
-                                </div>
-                                <div class="main-agents-contacts">
-                                    <div class="main-agents-title">
-                                        Contact us:
-                                    </div>
-                                    <div class="main-agents-soc">
-                                        <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
-                                                <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-agents-item col-sm-6 col-md-4 col-xl-2">
-                                <div class="main-agents-image">
-                                    <img class="lazyload" data-src="http://ahmed1872.beget.tech/wp-content/uploads/2023/05/Instagram-post-16-450x450.png" srcset>
-                                    <a href="http://ahmed1872.beget.tech/agent/nikita-antonov-2/" class="main-agents-btn">
-                                        Contact us                            </a>
-                                </div>
-                                <div class="main-agents-language">
-                                    Russian, English </div>
-                                <div class="main-agents-name">
-                                    <a href="http://ahmed1872.beget.tech/agent/nikita-antonov-2/">Nikita Antonov</a>
-                                </div>
-                                <div class="main-agents-contacts">
-                                    <div class="main-agents-title">
-                                        Contact us:
-                                    </div>
-                                    <div class="main-agents-soc">
-                                        <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
-                                                <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-agents-item col-sm-6 col-md-4 col-xl-2">
-                                <div class="main-agents-image">
-                                    <img class="lazyload" data-src="http://ahmed1872.beget.tech/wp-content/uploads/2021/04/Instagram-post-9-450x450.png" srcset>
-                                    <a href="http://ahmed1872.beget.tech/agent/kaara-sulaimanova-2/" class="main-agents-btn">
-                                        Contact us                            </a>
-                                </div>
-                                <div class="main-agents-language">
-                                    Russian, English </div>
-                                <div class="main-agents-name">
-                                    <a href="http://ahmed1872.beget.tech/agent/kaara-sulaimanova-2/">Kaara Sulaimanova</a>
-                                </div>
-                                <div class="main-agents-contacts">
-                                    <div class="main-agents-title">
-                                        Contact us:
-                                    </div>
-                                    <div class="main-agents-soc">
-                                        <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
+                                        <a th:href="${'tel:' + broker.telephone}" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
                                                 <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
                                             </svg>
@@ -2448,7 +2232,7 @@ Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_
                                 <div class="main-agents-more">
                                     <div class="main-agents-more-title">+</div>
                                     <div class="main-agents-more-description">28 professionals in our team</div>
-                                    <a class="btn btn-gold main-agents-more-btn ya-button_main_agent" href="/agent/">
+                                    <a class="btn btn-gold main-agents-more-btn ya-button_main_agent" href="/agent">
                                         See all team                        </a>
                                 </div>
                             </div>
@@ -2525,46 +2309,18 @@ Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_
                             </div>
                         </div>
                         <div class="row row-district">
-                            <div class="col-sm-6 col-md-4">
+                            <div th:each="district : ${districts}" class="col-sm-6 col-md-4">
                                 <div class="main-district-item">
-                                    <img class="lazyload" src="" data-src="" srcset>
-                                    <div class="main-district-title">Motor City</div>
-                                    <a href="http://ahmed1872.beget.tech/district/motor-city-en/" class="main-district-link btn btn-gold">More Details</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="main-district-item">
-                                    <img class="lazyload" src="" data-src="" srcset>
-                                    <div class="main-district-title">JVT (Jumeirah Village Triangle)</div>
-                                    <a href="http://ahmed1872.beget.tech/district/jvt-jumeirah-village-triangle-en/" class="main-district-link btn btn-gold">More Details</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="main-district-item">
-                                    <img class="lazyload" src="" data-src="" srcset>
-                                    <div class="main-district-title">Riverside</div>
-                                    <a href="http://ahmed1872.beget.tech/district/riverside-en/" class="main-district-link btn btn-gold">More Details</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="main-district-item">
-                                    <img class="lazyload" src="" data-src="" srcset>
-                                    <div class="main-district-title">Hudayriyat Island</div>
-                                    <a href="http://ahmed1872.beget.tech/district/hudayriyat-island-en/" class="main-district-link btn btn-gold">More Details</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="main-district-item">
-                                    <img class="lazyload" src="" data-src="" srcset>
-                                    <div class="main-district-title">Al Rifaah</div>
-                                    <a href="http://ahmed1872.beget.tech/district/al-rifaah-en/" class="main-district-link btn btn-gold">More Details</a>
+                                    <img th:src="${district.image}" class="lazyload" src="" data-src="" srcset>
+                                    <div th:text="${district.name}" class="main-district-title">Motor City</div>
+                                    <a th:href="'/district/' + ${district.name.replace(' ', '-')}" class="main-district-link btn btn-gold">More Details</a>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="main-district-item main-district-item-more">
                                     <div class="main-district-plus">+</div>
                                     <div class="main-district-description">See all districts</div>
-                                    <a href="/district/" class="main-district-link btn btn-gold">Go to catalog</a>
+                                    <a href="/district/page/1" class="main-district-link btn btn-gold">Go to catalog</a>
                                 </div>
                             </div>
                         </div>
@@ -2895,7 +2651,7 @@ Notice: Undefined index: image in /home/a/ahmed1872/ahmed1872.beget.tech/public_
                     <h3 class="widget-title">Menu</h3>
                     <div class="menu-foote-menu-eng-container">
                         <ul id="menu-foote-menu-eng" class="menu">
-                            <li id="menu-item-1332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a href="/about-us-en/">About us</a></li>
+                            <li id="menu-item-1332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a href="/about-us">About us</a></li>
                             <li id="menu-item-1333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1333"><a href="/agent/">Our team</a></li>
                             <li id="menu-item-1334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1334"><a href="/faq-en/">FAQ</a></li>
                             <li id="menu-item-62933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62933"><a href="/blog-en/">Blog</a></li>

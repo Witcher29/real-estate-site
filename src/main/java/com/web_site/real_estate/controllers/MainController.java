@@ -1,13 +1,7 @@
 package com.web_site.real_estate.controllers;
 
-import com.web_site.real_estate.models.Complex;
-import com.web_site.real_estate.models.Developer;
-import com.web_site.real_estate.models.District;
-import com.web_site.real_estate.models.Property;
-import com.web_site.real_estate.repo.ComplexRepository;
-import com.web_site.real_estate.repo.DeveloperRepository;
-import com.web_site.real_estate.repo.DistrictRepository;
-import com.web_site.real_estate.repo.PropertyRepository;
+import com.web_site.real_estate.models.*;
+import com.web_site.real_estate.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,11 +25,41 @@ public class MainController {
     @Autowired
     private DeveloperRepository developerRepository;
 
+    @Autowired
+    private BrokerRepository brokerRepository;
+
+    @Autowired
+    private ContactUsInfoRepository contactUsInfoRepository;
+
     @GetMapping("/")
     public String home(Model model) {
         List<Property> properties = propertyRepository.findAll();
-
+        Collections.reverse(properties);
         model.addAttribute("properties", properties);
+
+        List<Complex> complexes = complexRepository.findAll();
+        Collections.reverse(complexes);
+        if (complexes.size() > 3)
+            complexes = complexes.subList(0, 4);
+        model.addAttribute("complexes", complexes);
+
+        List<Developer> developers = developerRepository.findAll();
+        Collections.reverse(developers);
+        if (developers.size() > 4)
+            developers = developers.subList(0, 5);
+        model.addAttribute("developers", developers);
+
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.reverse(brokers);
+        if (brokers.size() > 5)
+            brokers = brokers.subList(0, 6);
+        model.addAttribute("brokers", brokers);
+
+        List<District> districts = districtRepository.findAll();
+        Collections.shuffle(districts);
+        if (districts.size() > 4)
+            districts = districts.subList(0, 5);
+        model.addAttribute("districts", districts);
 
         return "homePage";
     }
@@ -52,6 +76,10 @@ public class MainController {
             properties = properties.subList(0, 6);
             model.addAttribute("properties", properties);
         }
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.shuffle(brokers);
+        model.addAttribute("broker", brokers.get(0));
+
         return "propertyPage";
     }
 
@@ -62,6 +90,11 @@ public class MainController {
         model.addAttribute("complexes", complexes);
         if(numberOfPage != null)
             model.addAttribute("number", numberOfPage);
+
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.shuffle(brokers);
+        model.addAttribute("broker", brokers.get(0));
+
         return "all_complexes";
     }
 
@@ -83,6 +116,11 @@ public class MainController {
         if (!complexList.isEmpty()) {
             model.addAttribute("complex", complexList.get(0));
             model.addAttribute("complexes", endList);
+
+            List<Broker> brokers = brokerRepository.findAll();
+            Collections.shuffle(brokers);
+            model.addAttribute("broker", brokers.get(0));
+
             return "complexPage";
         }
         return "homePage";
@@ -94,6 +132,11 @@ public class MainController {
         model.addAttribute("districts", districts);
         if(numberOfPage != null)
             model.addAttribute("number", numberOfPage);
+
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.shuffle(brokers);
+        model.addAttribute("broker", brokers.get(0));
+
         return "all_districts";
     }
 
@@ -114,6 +157,10 @@ public class MainController {
                  properties = properties.subList(0, 6);
             model.addAttribute("properties", properties);
 
+            List<Broker> brokers = brokerRepository.findAll();
+            Collections.shuffle(brokers);
+            model.addAttribute("broker", brokers.get(0));
+
             return "districtPage";
         }
         return "homePage";
@@ -125,6 +172,11 @@ public class MainController {
         model.addAttribute("developers", developers);
         if(numberOfPage != null)
             model.addAttribute("number", numberOfPage);
+
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.shuffle(brokers);
+        model.addAttribute("broker", brokers.get(0));
+
         return "all_developers";
     }
 
@@ -145,6 +197,10 @@ public class MainController {
                 properties = properties.subList(0, 6);
             model.addAttribute("properties", properties);
 
+            List<Broker> brokers = brokerRepository.findAll();
+            Collections.shuffle(brokers);
+            model.addAttribute("broker", brokers.get(0));
+
             return "developerPage";
         }
         return "homePage";
@@ -156,6 +212,51 @@ public class MainController {
         model.addAttribute("properties", properties);
         if(numberOfPage != null)
             model.addAttribute("number", numberOfPage);
+
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.shuffle(brokers);
+        model.addAttribute("broker", brokers.get(0));
         return "all_properties";
     }
+
+    @GetMapping("/about-us")
+    public String aboutUs(Model model) {
+        List<Broker> brokers = brokerRepository.findAll();
+        Collections.shuffle(brokers);
+        if (brokers.size() > 5)
+            brokers = brokers.subList(0, 6);
+        model.addAttribute("brokers", brokers);
+
+        List<Developer> developers = developerRepository.findAll();
+        Collections.shuffle(developers);
+        if (developers.size() > 4)
+            developers = developers.subList(0, 5);
+        model.addAttribute("developers", developers);
+        return "about_us";
+    }
+
+    @GetMapping("/agent")
+    public String agents(Model model) {
+        List<Broker> brokers = brokerRepository.findAll();
+        model.addAttribute("brokers", brokers);
+        return "all_agents";
+    }
+
+    @GetMapping("/agent/{nameOfAgent}-{id}")
+    public String moreDetailsOfAgent(@PathVariable Integer id, Model model) {
+        Optional<Broker> brokerOptional = brokerRepository.findById(id);
+        if (brokerOptional.isPresent()) {
+            Broker broker = brokerOptional.get();
+            model.addAttribute("broker", broker);
+        }
+        return "agentPage";
+    }
+
+    @GetMapping("/contact-us")
+    public String contactUs(Model model) {
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+        return "contact_us";
+    }
+
 }

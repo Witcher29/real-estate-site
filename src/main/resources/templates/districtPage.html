@@ -1616,13 +1616,13 @@
                                     </li>
                                     <li id="menu-item-992"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-992">
-                                        <a title="About us" href="/about-us-en/" data-toggle="dropdown"
+                                        <a title="About us" href="/about-us" data-toggle="dropdown"
                                            class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">About us
                                             <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
                                             <li id="menu-item-9192"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9192">
-                                                <a title="Our experts" href="http://ahmed1872.beget.tech/agent/">Our
+                                                <a title="Our experts" href="/agent">Our
                                                     experts</a></li>
                                             <li id="menu-item-1350"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1350">
@@ -1638,7 +1638,7 @@
                                     </li>
                                     <li id="menu-item-1358"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358">
-                                        <a title="Contact us" href="http://ahmed1872.beget.tech/contact-us-en/">Contact
+                                        <a title="Contact us" href="/contact-us">Contact
                                             us</a></li>
                                 </ul>
                             </div>
@@ -2494,28 +2494,27 @@
                                 <div class="property-agent-info">
                                     <div class="agent-detail">
                                         <div class="image">
-                                            <a href="http://ahmed1872.beget.tech/agent/nikita-antonov-2/"><img
+                                            <a th:href="${'/agent/' + broker.name.replace(' ', '-') + '-' + broker.id}"><img
+                                                    th:src="${broker.image}"
                                                     class="lazyload"
-                                                    data-src="http://ahmed1872.beget.tech/wp-content/uploads/2023/05/Instagram-post-16-1024x1024.png"
-                                                    alt="Nikita Antonov"></a>
+                                                    data-src=""
+                                                    alt="Sanzhar Yuldashev"></a>
                                         </div>
                                         <div class="info">
                                             <div class="agent-before-title">Your broker</div>
                                             <div class="agent-title"><a
-                                                    href="http://ahmed1872.beget.tech/agent/nikita-antonov-2/">Nikita
-                                                Antonov</a>
+                                                    th:href="${'/agent/' + broker.name.replace(' ', '-') + '-' + broker.id}"
+                                                    th:text="${broker.name}">Sanzhar Yuldashev</a>
                                             </div>
                                             <div class="agent-phone-block">
                                                 <div class="agent-phone-title">Phone:</div>
                                                 <div class="agent-phone-value">
-                                                    <a href="tel:+790000000000">+790000000000</a>
+                                                    <a th:href="${'tel:' + broker.telephone}" th:text="${'tel:' + broker.telephone}">+790000000000</a>
                                                 </div>
                                             </div>
                                             <div class="main-agents-soc mb-20 social-networks">
-                                                <a href="tel:+790000000000" target="_blank" class="main-agents-soc-item"
-                                                   onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22"
-                                                         fill="none">
+                                                <a th:href="${'tel:' + broker.telephone}" target="_blank" class="main-agents-soc-item" onclick="ym(11111111,'reachGoal','agent_click_tg'); window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'agent_click_tg'});">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" fill="none">
                                                         <path d="M5.7925 10.2125C7.0525 12.6887 9.0825 14.71 11.5588 15.9787L13.4837 14.0537C13.72 13.8175 14.07 13.7387 14.3763 13.8437C15.3562 14.1675 16.415 14.3425 17.5 14.3425C17.9812 14.3425 18.375 14.7362 18.375 15.2175V18.2712C18.375 18.7525 17.9812 19.1462 17.5 19.1462C9.28375 19.1462 2.625 12.4875 2.625 4.27124C2.625 3.78999 3.01875 3.39624 3.5 3.39624H6.5625C7.04375 3.39624 7.4375 3.78999 7.4375 4.27124C7.4375 5.36499 7.6125 6.41499 7.93625 7.39499C8.0325 7.70124 7.9625 8.04249 7.7175 8.28749L5.7925 10.2125Z"/>
                                                     </svg>
                                                 </a>
@@ -2736,7 +2735,7 @@
                             <ul id="menu-foote-menu-eng" class="menu">
                                 <li id="menu-item-1332"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a
-                                        href="/about-us-en/">About us</a></li>
+                                        href="/about-us">About us</a></li>
                                 <li id="menu-item-1333"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1333"><a
                                         href="/agent/">Our team</a></li>

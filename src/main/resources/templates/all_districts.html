@@ -1612,13 +1612,13 @@
                                     </li>
                                     <li id="menu-item-992"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-992">
-                                        <a title="About us" href="/about-us-en/" data-toggle="dropdown"
+                                        <a title="About us" href="/about-us" data-toggle="dropdown"
                                            class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">About us
                                             <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
                                             <li id="menu-item-9192"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9192">
-                                                <a title="Our experts" href="http://ahmed1872.beget.tech/agent/">Our
+                                                <a title="Our experts" href="/agent">Our
                                                     experts</a></li>
                                             <li id="menu-item-1350"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1350">
@@ -1634,7 +1634,7 @@
                                     </li>
                                     <li id="menu-item-1358"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358">
-                                        <a title="Contact us" href="http://ahmed1872.beget.tech/contact-us-en/">Contact
+                                        <a title="Contact us" href="/contact-us">Contact
                                             us</a></li>
                                 </ul>
                             </div>
@@ -1773,14 +1773,15 @@
                                                 <div class="expert-online">Online</div>
                                             </div>
                                             <div class="expert-photo">
-                                                <a href="http://ahmed1872.beget.tech/agent/vladimir-zhukov-2/">
-                                                    <img src="http://ahmed1872.beget.tech/wp-content/uploads/2021/04/Instagram-post-13-1024x1024.png"
+                                                <a th:href="${'/agent/' + broker.name.replace(' ', '-') + '-' + broker.id}">
+                                                    <img th:src="${broker.image}"
                                                          alt="">
                                                 </a>
                                             </div>
                                             <div class="expert-name">
-                                                <a href="http://ahmed1872.beget.tech/agent/vladimir-zhukov-2/">Vladimir
-                                                    Zhukov</a>
+                                                <a th:href="${'/agent/' + broker.name.replace(' ', '-') + '-' + broker.id}"
+                                                   th:text="${broker.name}">Nikita
+                                                    Antonov</a>
                                             </div>
                                             <div class="expert-job-title">
                                                 Your broker
@@ -2060,7 +2061,7 @@
                             <ul id="menu-foote-menu-eng" class="menu">
                                 <li id="menu-item-1332"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a
-                                        href="/about-us-en/">About us</a></li>
+                                        href="/about-us">About us</a></li>
                                 <li id="menu-item-1333"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1333"><a
                                         href="/agent/">Our team</a></li>
