@@ -996,17 +996,17 @@
               <div class="contacts-form-descr">
                 Ask our experts, they will be happy to help you    </div>
               <div class="contacts-form-form">
-                <form class="needs-validation">
-                  <input type="hidden" name1="action" value=" Have questions?">
-                  <input type="hidden" name2="sendto" value="">
+                <form action="/contact-us" method="post" class="needs-validation">
+                  <input type="hidden" name="action" value=" Have questions?">
+                  <input type="hidden" name="sendto" value="">
                   <div class="form-group">
-                    <input name3="name" type="text" class="form-control"
-                           placeholder="Your name:" name4="name" required>
-                    <input name5="phone" type="text" class="form-control phone-mask" name6="phone"
+                    <input type="text" class="form-control"
+                           placeholder="Your name:" name="name" required>
+                    <input type="text" class="form-control phone-mask" name="phone"
                            placeholder="+ 1 --- -- -- --" required>
-                    <input name7="email" type="text" class="form-control" name8="e-mail"
+                    <input type="text" class="form-control" name="email"
                            placeholder="Your e-mail:">
-                    <textarea name9="question" class="form-control"  name10="question"
+                    <textarea class="form-control"  name="question"
                               placeholder="Write your question"></textarea>
                   </div>
                   <div class="form-group">
@@ -1018,7 +1018,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="btn btn-gold btn-form-free form_have_questions send_all_form">Send request</div>
+                    <button type="submit" class="btn btn-gold btn-form-free form_have_questions send_all_form">Send request</button>
                   </div>
                 </form>
               </div>

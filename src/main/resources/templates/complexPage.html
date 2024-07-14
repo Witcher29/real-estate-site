@@ -3160,7 +3160,7 @@
                 <div class="download-presentation-descr">
                     Layouts and prices, photo gallery and infrastructure
                 </div>
-                <form class="needs-validation">
+                <form method="post" class="needs-validation">
                     <input type="hidden" name="action" value="Ask a Question">
                     <input type="hidden" name="sendto" value="">
                     <input class="form-control form-control-main" type="text" name="name" placeholder="Your name"
@@ -3169,9 +3169,7 @@
                            placeholder="+ 1 --- -- -- --"
                            aria-label="default input example" required>
                     <textarea class="form-control" name="question" placeholder="Question"></textarea>
-                    <div class="btn btn-gold send_all_form">
-                        Ask a Question
-                    </div>
+                    <button type="submit" class="btn btn-gold send_all_form">Ask a Question</button>
                     <div class="download-presentation-private">
                         <div class="main_privacy_policy">
                             <input checked="" class="custom-checkbox" type="checkbox" id="privacy_policy_aq"
