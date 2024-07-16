@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Table</title>
+</head>
+<body>
+<h1>Admin Table</h1>
+
+<form th:action="@{/admin/table}" method="get">
+  <label for="tableName">Select Table:</label>
+  <select id="tableName" name="tableName">
+    <option th:each="tableName : ${tableNames}" th:value="${tableName}" th:text="${tableName}"></option>
+  </select>
+  <button type="submit">Load Table</button>
+</form>
+
+<table th:if="${not #lists.isEmpty(tableData)}">
+  <thead>
+  <tr>
+    <th th:each="fieldName : ${#objectutils.nullSafeGet(tableData[0], '__fields__', #arrays.toList(new String[0]))}">
+      <span th:text="${fieldName}"></span>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="row : ${tableData}">
+    <td th:each="fieldName : ${#objectutils.nullSafeGet(tableData[0], '__fields__', #arrays.toList(new String[0]))}">
+      <span th:text="${#fields.value(row, fieldName)}"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div th:if="${#lists.isEmpty(tableData)}">
+  No data available.
+</div>
+</body>
+</html>

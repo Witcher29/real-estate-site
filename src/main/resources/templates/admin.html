@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container my-5">
+  <h1>Admin Dashboard</h1>
+  <hr>
+  <h2>Select a Table</h2>
+  <form th:action="@{/admin/table}" method="get">
+    <div class="form-group">
+      <label for="tableSelect">Choose a table:</label>
+      <select class="form-control" id="tableSelect" name="tableName" required>
+        <option value="">Select a table</option>
+        <option th:each="tableName : ${tableNames}" th:value="${tableName}" th:text="${tableName}"></option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">View Table</button>
+  </form>
+</div>
+</body>
+</html>
