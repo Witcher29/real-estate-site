@@ -20,6 +20,7 @@ public class Developer {
     private String name;
     private String additional_info;
     private String image;
+    private String vector_image;
 
     @OneToMany(mappedBy = "developer",fetch = FetchType.LAZY)
     private List<Complex> complexList;

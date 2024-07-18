@@ -1981,80 +1981,47 @@
                     <div id="cozy_contact_info-1" class="widget widget_contact">
                         <h3 class="widget-title">Contact information</h3>
                         <ul class="widget-contacts">
-                            <li><a class="" href="/contact-us/">+7 111 111-11-111</a></li>
-                            <li><a class="ch_phone" href="tel:+71111111111">name@real.estate.agency</a></li>
-                            <li><a class="" href="mailto:name@real.estate.agency">Gate Avenue, Zone D, Level 1 - Al
-                                Mustaqbal St - Dubai</a></li>
+                            <li><a th:href="${'tel:' + info.phone}" th:text="${info.phone}" class="" >+7 111 111-11-111</a></li>
+                            <li><a th:href="${'mailto:' + info.email}" th:text="${info.email}" class="ch_phone" >name@real.estate.agency</a></li>
+                            <li><a class="" href="/contact-us" th:text="${info.address}">Gate Avenue, Zone D, Level 1 - Al Mustaqbal St - Dubai</a></li>
                         </ul>
 
                     </div>
                 </div>
 
                 <div class="block col-sm-6 col-xl-2">
-                    <div id="nav_menu-1" class="widget widget_nav_menu"><h3 class="widget-title">Menu</h3>
+                    <div id="nav_menu-1" class="widget widget_nav_menu">
+                        <h3 class="widget-title">Menu</h3>
                         <div class="menu-foote-menu-eng-container">
                             <ul id="menu-foote-menu-eng" class="menu">
-                                <li id="menu-item-1332"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a
-                                        href="/about-us">About us</a></li>
-                                <li id="menu-item-1333"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-1333">
-                                    <a href="/agent/" aria-current="page">Our team</a></li>
-                                <li id="menu-item-1334"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1334"><a
-                                        href="/faq-en/">FAQ</a></li>
-                                <li id="menu-item-62933"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62933"><a
-                                        href="/blog-en/">Blog</a></li>
-                                <li id="menu-item-1335"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1335"><a
-                                        href="/podcast/">Podcasts</a></li>
+                                <li id="menu-item-1332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a href="/about-us">About us</a></li>
+                                <li id="menu-item-1333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1333"><a href="/agent">Our team</a></li>
+                                <li id="menu-item-1334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1334"><a href="/faq-en/">FAQ</a></li>
+                                <li id="menu-item-62933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62933"><a href="/blog-en/">Blog</a></li>
+                                <li id="menu-item-1335" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1335"><a href="/podcast/">Podcasts</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="block col-sm-12 col-xl-8">
-                    <div id="cozy_latest_listings-2" class="widget widget_latest_listings"><h3 class="widget-title">
-                        Latest offers</h3>
+                    <div id="cozy_latest_listings-2" class="widget widget_latest_listings">
+                        <h3 class="widget-title">Latest offers</h3>
                         <ul class="dark footer_latest_listing">
 
-                            <li>
+                            <li th:each="property : ${propertiesBelow}">
                                 <div class="image">
-                                    <a href="http://ahmed1872.beget.tech/property/5-bedrooms-in-riverside-by-damac-en/"></a>
+                                    <a th:object="${property}"
+                                       th:href="'/property/' + *{bedrooms} + '-bedrooms-in-' + *{complex.complex_name.replace(' ', '-')} + '-' + *{id}"></a>
                                 </div>
-                                <div class="title">
-                                    <div class="title-top">Riverside</div>
-                                    <a href="http://ahmed1872.beget.tech/property/5-bedrooms-in-riverside-by-damac-en/"><span>5 bedrooms in Riverside by Damac</span></a>
-                                    <div class="title-link">Price: <span><div><div class="price-val"><span
-                                            class="price_inner_num">919 890</span><span
-                                            class="price_inner_symb">USD</span></div></div></span></div>
+                                <div th:object="${property}" class="title">
+                                    <div th:text="*{complex.district.name}" class="title-top">Riverside</div>
+                                    <a th:href="'/property/' + *{bedrooms} + '-bedrooms-in-' + *{complex.complex_name.replace(' ', '-')} + '-' + *{id}">
+                                        <span th:text="*{isItStudio ? 'Studio in ' + complex.complex_name + ' by ' + complex.developer.name : bedrooms + (bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + complex.complex_name + ' by ' + complex.developer.name}">5 bedrooms in Riverside by Damac</span></a>
+                                    <div class="title-link">Price: <span><div><div class="price-val"><span th:text="*{#strings.replace(#numbers.formatInteger(price,0,'POINT'), '.', ' ')}" class="price_inner_num">919 890</span><span class="price_inner_symb">USD</span></div>
                                 </div>
-                            </li>
-
-
-                            <li>
-                                <div class="image">
-                                    <a href="http://ahmed1872.beget.tech/property/4-bedrooms-in-riverside-by-damac-en/"></a>
-                                </div>
-                                <div class="title">
-                                    <div class="title-top">Riverside</div>
-                                    <a href="http://ahmed1872.beget.tech/property/4-bedrooms-in-riverside-by-damac-en/"><span>4 bedrooms in Riverside by Damac</span></a>
-                                    <div class="title-link">Price: <span><div><div class="price-val"><span
-                                            class="price_inner_num">620 190</span><span
-                                            class="price_inner_symb">USD</span></div></div></span></div>
-                                </div>
-                            </li>
-
-
-                            <li>
-                                <div class="image">
-                                    <a href="http://ahmed1872.beget.tech/property/3-bedrooms-in-the-atria-en-2/"></a>
-                                </div>
-                                <div class="title">
-                                    <div class="title-top">Business Bay</div>
-                                    <a href="http://ahmed1872.beget.tech/property/3-bedrooms-in-the-atria-en-2/"><span>3 bedrooms in The Atria</span></a>
-                                    <div class="title-link">Price</div>
+                                </span>
+                                    </div>
                                 </div>
                             </li>
 

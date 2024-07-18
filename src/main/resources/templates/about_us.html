@@ -1630,7 +1630,7 @@
                                     </li>
                                     <li id="menu-item-992"
                                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-has-children menu-item-992 active">
-                                        <a title="About us" href="/about-us/" data-toggle="dropdown"
+                                        <a title="About us" href="/about-us" data-toggle="dropdown"
                                            class="dropdown-toggle" aria-haspopup="true" data-hover="dropdown">About us
                                             <b class="caret"></b></a>
                                         <ul role="menu" class=" dropdown-menu">
@@ -2042,12 +2042,12 @@
                                             <div class="main-agents-contacts-line">
                                                 <div class="main-agents-contacts-line-name">Phone:</div>
                                                 <div class="main-agents-contacts-line-value dir-ltr"><a
-                                                        href="tel:+7%20111%20111-11-11">+7 111 111-11-111</a></div>
+                                                        th:href="${'tel:' + info.phone}" th:text="${info.phone}">+7 111 111-11-111</a></div>
                                             </div>
                                             <div class="main-agents-contacts-line">
                                                 <div class="main-agents-contacts-line-name">Email:</div>
                                                 <div class="main-agents-contacts-line-value"><a
-                                                        href="mailto:name@real.estate.agency">name@real.estate.agency</a>
+                                                        th:href="${'mailto:' + info.email}" th:text="${info.email}">name@real.estate.agency</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -2109,11 +2109,8 @@
                             <div class="row row-organisation">
                                 <div th:each="developer : ${developers}" class="col-6 col-lg-4 col-xl-2">
                                     <a th:href="'/organisation/' + ${developer.name.replace(' ', '-')}"
-                                       class="main_organisation_item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="139" height="28"
-                                             viewBox="0 0 139 28" fill="none">
-                                            <path d="M20.3418 24.8656L19.9304 27.5916H0.248047C1.06243 25.7057 1.01099 24.6427 1.01099 23.2797V4.54035C1.01099 3.22019 1.06243 2.06292 0.248047 0.228415H6.14588H19.4503L19.4846 3.00588C19.1245 2.86015 18.8331 2.73157 18.5673 2.61155C17.8558 2.34581 16.9557 2.09721 16.0213 2.10578C14.5297 2.10578 8.27184 2.10578 5.49438 2.10578V12.8213H17.8472L17.2386 14.9301H5.49438V25.6543C7.76607 25.6543 15.0269 25.6543 16.63 25.6543C18.5073 25.6885 20.3761 24.6256 20.3761 24.6256L20.3247 24.857C20.3247 24.8656 20.3333 24.8656 20.3418 24.8656ZM49.9682 27.5916C50.2339 26.2457 50.2339 24.3427 50.0196 22.7911L48.2708 9.89812L38.7211 27.583H36.9038L27.1998 9.10088L25.3138 23.0739C25.1081 24.6856 25.0481 26.7258 25.2195 27.5916H21.8077C22.4678 26.1943 22.6307 25.5857 22.9393 23.2883L26.0254 0.228415H27.5941L38.9183 21.7452L50.2339 0.228415H51.4169L54.6058 23.2368C54.923 25.5257 55.163 26.1857 55.7974 27.5916H49.9682ZM78.7115 27.5916L74.1681 17.5704H65.0299L60.5465 27.5916H60.1608H56.9975H56.9804C58.112 26.1857 58.4977 25.5342 59.295 23.7855L69.8905 0.228415H71.082L81.5061 23.1254C82.6205 25.3628 83.1435 26.0572 84.7379 27.5916H78.7115ZM107.301 27.5916L102.757 17.5704H93.619L89.1356 27.5916H88.7584H85.5866H85.5695C86.701 26.1857 87.0868 25.5342 87.884 23.7855L98.4795 0.228415H99.6711L110.104 23.1254C111.218 25.3628 111.741 26.0572 113.336 27.5916H107.301ZM133.206 27.6088C130.472 25.1142 126.931 21.8052 122.499 16.5589C121.231 15.0759 120.339 14.8873 119.765 14.853V23.2797C119.765 24.6341 119.765 25.7057 120.536 27.5916H114.519C115.333 25.7057 115.282 24.6427 115.282 23.2797V4.5232C115.282 3.20305 115.333 2.04577 114.519 0.211271H120.416C124.445 0.211271 133.969 -0.148772 133.969 7.72072C133.969 11.8784 130.669 14.1158 126.794 14.6815L125.646 14.793C125.646 14.793 138.213 27.0773 138.753 27.6088H133.206ZM126.083 13.1128L126.074 13.1214C128.612 12.1612 129.469 9.75239 129.383 7.71215C129.289 5.74906 128.406 1.47999 119.773 1.82289V13.49C119.773 13.49 124.608 13.7557 125.963 13.1642C126.04 13.1299 126.083 13.1128 126.083 13.1128ZM94.4934 15.6588H101.874L98.1538 7.48927L94.4934 15.6588ZM65.9129 15.6588H73.2937L69.5733 7.48927L65.9129 15.6588Z"/>
-                                        </svg>
+                                       class="main_organisation_item" th:utext="${developer.vector_image}">
+
                                     </a>
                                 </div>
 
@@ -2317,80 +2314,47 @@
                     <div id="cozy_contact_info-1" class="widget widget_contact">
                         <h3 class="widget-title">Contact information</h3>
                         <ul class="widget-contacts">
-                            <li><a class="" href="/contact-us/">+7 111 111-11-111</a></li>
-                            <li><a class="ch_phone" href="tel:+71111111111">name@real.estate.agency</a></li>
-                            <li><a class="" href="mailto:name@real.estate.agency">Gate Avenue, Zone D, Level 1 - Al
-                                Mustaqbal St - Dubai</a></li>
+                            <li><a th:href="${'tel:' + info.phone}" th:text="${info.phone}" class="" >+7 111 111-11-111</a></li>
+                            <li><a th:href="${'mailto:' + info.email}" th:text="${info.email}" class="ch_phone" >name@real.estate.agency</a></li>
+                            <li><a class="" href="/contact-us" th:text="${info.address}">Gate Avenue, Zone D, Level 1 - Al Mustaqbal St - Dubai</a></li>
                         </ul>
 
                     </div>
                 </div>
 
                 <div class="block col-sm-6 col-xl-2">
-                    <div id="nav_menu-1" class="widget widget_nav_menu"><h3 class="widget-title">Menu</h3>
+                    <div id="nav_menu-1" class="widget widget_nav_menu">
+                        <h3 class="widget-title">Menu</h3>
                         <div class="menu-foote-menu-eng-container">
                             <ul id="menu-foote-menu-eng" class="menu">
-                                <li id="menu-item-1332"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-1332">
-                                    <a href="/about-us-en/" aria-current="page">About us</a></li>
-                                <li id="menu-item-1333"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1333"><a
-                                        href="/agent/">Our team</a></li>
-                                <li id="menu-item-1334"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1334"><a
-                                        href="/faq-en/">FAQ</a></li>
-                                <li id="menu-item-62933"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62933"><a
-                                        href="/blog-en/">Blog</a></li>
-                                <li id="menu-item-1335"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1335"><a
-                                        href="/podcast/">Podcasts</a></li>
+                                <li id="menu-item-1332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1332"><a href="/about-us">About us</a></li>
+                                <li id="menu-item-1333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1333"><a href="/agent">Our team</a></li>
+                                <li id="menu-item-1334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1334"><a href="/faq-en/">FAQ</a></li>
+                                <li id="menu-item-62933" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-62933"><a href="/blog-en/">Blog</a></li>
+                                <li id="menu-item-1335" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1335"><a href="/podcast/">Podcasts</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="block col-sm-12 col-xl-8">
-                    <div id="cozy_latest_listings-2" class="widget widget_latest_listings"><h3 class="widget-title">
-                        Latest offers</h3>
+                    <div id="cozy_latest_listings-2" class="widget widget_latest_listings">
+                        <h3 class="widget-title">Latest offers</h3>
                         <ul class="dark footer_latest_listing">
 
-                            <li>
+                            <li th:each="property : ${propertiesBelow}">
                                 <div class="image">
-                                    <a href="http://ahmed1872.beget.tech/property/5-bedrooms-in-riverside-by-damac-en/"></a>
+                                    <a th:object="${property}"
+                                       th:href="'/property/' + *{bedrooms} + '-bedrooms-in-' + *{complex.complex_name.replace(' ', '-')} + '-' + *{id}"></a>
                                 </div>
-                                <div class="title">
-                                    <div class="title-top">Riverside</div>
-                                    <a href="http://ahmed1872.beget.tech/property/5-bedrooms-in-riverside-by-damac-en/"><span>5 bedrooms in Riverside by Damac</span></a>
-                                    <div class="title-link">Price: <span><div><div class="price-val"><span
-                                            class="price_inner_num">919 890</span><span
-                                            class="price_inner_symb">USD</span></div></div></span></div>
+                                <div th:object="${property}" class="title">
+                                    <div th:text="*{complex.district.name}" class="title-top">Riverside</div>
+                                    <a th:href="'/property/' + *{bedrooms} + '-bedrooms-in-' + *{complex.complex_name.replace(' ', '-')} + '-' + *{id}">
+                                        <span th:text="*{isItStudio ? 'Studio in ' + complex.complex_name + ' by ' + complex.developer.name : bedrooms + (bedrooms == 1 ? ' bedroom in ' : ' bedrooms in ') + complex.complex_name + ' by ' + complex.developer.name}">5 bedrooms in Riverside by Damac</span></a>
+                                    <div class="title-link">Price: <span><div><div class="price-val"><span th:text="*{#strings.replace(#numbers.formatInteger(price,0,'POINT'), '.', ' ')}" class="price_inner_num">919 890</span><span class="price_inner_symb">USD</span></div>
                                 </div>
-                            </li>
-
-
-                            <li>
-                                <div class="image">
-                                    <a href="http://ahmed1872.beget.tech/property/4-bedrooms-in-riverside-by-damac-en/"></a>
-                                </div>
-                                <div class="title">
-                                    <div class="title-top">Riverside</div>
-                                    <a href="http://ahmed1872.beget.tech/property/4-bedrooms-in-riverside-by-damac-en/"><span>4 bedrooms in Riverside by Damac</span></a>
-                                    <div class="title-link">Price: <span><div><div class="price-val"><span
-                                            class="price_inner_num">620 190</span><span
-                                            class="price_inner_symb">USD</span></div></div></span></div>
-                                </div>
-                            </li>
-
-
-                            <li>
-                                <div class="image">
-                                    <a href="http://ahmed1872.beget.tech/property/3-bedrooms-in-the-atria-en-2/"></a>
-                                </div>
-                                <div class="title">
-                                    <div class="title-top">Business Bay</div>
-                                    <a href="http://ahmed1872.beget.tech/property/3-bedrooms-in-the-atria-en-2/"><span>3 bedrooms in The Atria</span></a>
-                                    <div class="title-link">Price</div>
+                                </span>
+                                    </div>
                                 </div>
                             </li>
 

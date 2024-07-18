@@ -21,6 +21,6 @@ public class ContactUsInfo {
     private String phone;
     private String number_for_whats_app;
 
-    @ElementCollection
-    private List<String> opening_hours;
+    private String opening_hours1;
+    private String opening_hours2;
 }

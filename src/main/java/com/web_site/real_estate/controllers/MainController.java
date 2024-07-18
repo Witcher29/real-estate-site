@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
 
@@ -63,6 +64,14 @@ public class MainController {
             districts = districts.subList(0, 5);
         model.addAttribute("districts", districts);
 
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
+
         return "homePage";
     }
 
@@ -75,27 +84,46 @@ public class MainController {
 
             List<Property> properties = propertyRepository.findAllByBedrooms(property.getBedrooms());
             Collections.shuffle(properties, new Random());
-            properties = properties.subList(0, 6);
+            if (properties.size() > 5)
+                properties = properties.subList(0, 6);
             model.addAttribute("properties", properties);
         }
         List<Broker> brokers = brokerRepository.findAll();
         Collections.shuffle(brokers);
         model.addAttribute("broker", brokers.get(0));
 
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
+
         return "propertyPage";
     }
+
+
 
     @GetMapping("/complex/page/{numberOfPage}")
     public String complexes(@PathVariable(required = false) Integer numberOfPage, Model model) {
         List<Complex> complexes = complexRepository.findAll();
 
         model.addAttribute("complexes", complexes);
-        if(numberOfPage != null)
+        if (numberOfPage != null)
             model.addAttribute("number", numberOfPage);
 
         List<Broker> brokers = brokerRepository.findAll();
         Collections.shuffle(brokers);
         model.addAttribute("broker", brokers.get(0));
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
 
         return "all_complexes";
     }
@@ -123,6 +151,14 @@ public class MainController {
             Collections.shuffle(brokers);
             model.addAttribute("broker", brokers.get(0));
 
+            List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+            model.addAttribute("info", contactUsInfos.get(0));
+
+            List<Property> propertiesBelow = propertyRepository.findAll();
+            Collections.reverse(propertiesBelow);
+            propertiesBelow = propertiesBelow.subList(0,3);
+            model.addAttribute("propertiesBelow", propertiesBelow);
+
             return "complexPage";
         }
         return "homePage";
@@ -138,6 +174,14 @@ public class MainController {
         List<Broker> brokers = brokerRepository.findAll();
         Collections.shuffle(brokers);
         model.addAttribute("broker", brokers.get(0));
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
 
         return "all_districts";
     }
@@ -163,6 +207,14 @@ public class MainController {
             Collections.shuffle(brokers);
             model.addAttribute("broker", brokers.get(0));
 
+            List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+            model.addAttribute("info", contactUsInfos.get(0));
+
+            List<Property> propertiesBelow = propertyRepository.findAll();
+            Collections.reverse(propertiesBelow);
+            propertiesBelow = propertiesBelow.subList(0,3);
+            model.addAttribute("propertiesBelow", propertiesBelow);
+
             return "districtPage";
         }
         return "homePage";
@@ -178,6 +230,14 @@ public class MainController {
         List<Broker> brokers = brokerRepository.findAll();
         Collections.shuffle(brokers);
         model.addAttribute("broker", brokers.get(0));
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
 
         return "all_developers";
     }
@@ -203,6 +263,14 @@ public class MainController {
             Collections.shuffle(brokers);
             model.addAttribute("broker", brokers.get(0));
 
+            List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+            model.addAttribute("info", contactUsInfos.get(0));
+
+            List<Property> propertiesBelow = propertyRepository.findAll();
+            Collections.reverse(propertiesBelow);
+            propertiesBelow = propertiesBelow.subList(0,3);
+            model.addAttribute("propertiesBelow", propertiesBelow);
+
             return "developerPage";
         }
         return "homePage";
@@ -218,6 +286,14 @@ public class MainController {
         List<Broker> brokers = brokerRepository.findAll();
         Collections.shuffle(brokers);
         model.addAttribute("broker", brokers.get(0));
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
         return "all_properties";
     }
 
@@ -234,6 +310,14 @@ public class MainController {
         if (developers.size() > 4)
             developers = developers.subList(0, 5);
         model.addAttribute("developers", developers);
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
         return "about_us";
     }
 
@@ -241,6 +325,14 @@ public class MainController {
     public String agents(Model model) {
         List<Broker> brokers = brokerRepository.findAll();
         model.addAttribute("brokers", brokers);
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
         return "all_agents";
     }
 
@@ -251,6 +343,14 @@ public class MainController {
             Broker broker = brokerOptional.get();
             model.addAttribute("broker", broker);
         }
+
+        List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
+        model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
         return "agentPage";
     }
 
@@ -258,6 +358,11 @@ public class MainController {
     public String contactUs(Model model) {
         List<ContactUsInfo> contactUsInfos = contactUsInfoRepository.findAll();
         model.addAttribute("info", contactUsInfos.get(0));
+
+        List<Property> propertiesBelow = propertyRepository.findAll();
+        Collections.reverse(propertiesBelow);
+        propertiesBelow = propertiesBelow.subList(0,3);
+        model.addAttribute("propertiesBelow", propertiesBelow);
         return "contact_us";
     }
 

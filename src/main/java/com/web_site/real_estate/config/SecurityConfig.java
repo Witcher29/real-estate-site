@@ -31,17 +31,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/").permitAll()
-                        .requestMatchers("/complex/**").permitAll()
-                        .requestMatchers("/property/**").permitAll()
-                        .requestMatchers("/organisations/**").permitAll()
-                        .requestMatchers("/about-us").permitAll()
-                        .requestMatchers("/contact-us").permitAll()
-                        .requestMatchers("/district/**").permitAll()
-                        .requestMatchers("/agent/**").permitAll()
-                        .requestMatchers("contact-us").permitAll()
+                .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin**").authenticated()
-                        .requestMatchers("/admin/**").authenticated())
+                        .requestMatchers("/admin/**").authenticated()
+                        .anyRequest().permitAll())
                 .formLogin(AbstractAuthenticationFilterConfigurer :: permitAll)
                 .build();
     }

@@ -2,6 +2,7 @@ package com.web_site.real_estate.controllers;
 
 import com.web_site.real_estate.models.FeedbackForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -14,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class FeedbackFormController {
 
-    private String emailOfSender = "vyakhirev04@mail.ru";
-    private String emailOfRecipient = "vyakhirev_a90@mail.ru";
+    @Value("${emailOfSender}")
+    private String emailOfSender;
+
+    @Value("${emailOfRecipient}")
+    private String emailOfRecipient;
 
     @Autowired
     private JavaMailSender mailSender;
@@ -31,11 +35,16 @@ public class FeedbackFormController {
                             "Phone: " + feedbackForm.getPhone() + "\n" +
                             "Question: " + feedbackForm.getQuestion()
             );
-        else
+        else if (feedbackForm.getQuestion() != null)
             message.setText(
                     "Name of client: " + feedbackForm.getName() + "\n" +
                             "Phone: " + feedbackForm.getPhone() + "\n" +
                             "Question: " + feedbackForm.getQuestion()
+            );
+        else
+            message.setText(
+                    "Name of client: " + feedbackForm.getName() + "\n" +
+                            "Phone: " + feedbackForm.getPhone()
             );
         mailSender.send(message);
     }
