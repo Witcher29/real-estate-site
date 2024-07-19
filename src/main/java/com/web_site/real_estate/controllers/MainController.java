@@ -174,6 +174,15 @@ public class MainController {
             model.addAttribute("complex", complexList.get(0));
             model.addAttribute("complexes", endList);
 
+            listOfBedroomsOfProperiesInOneComplex.clear();
+            listOfPropetiesInOneComplex.clear();
+            for (Property property1 : complexList.get(0).getPropertyList()) {
+                String s = String.valueOf(property1.getBedrooms());
+                listOfPropetiesInOneComplex.add(property1);
+                if (!listOfBedroomsOfProperiesInOneComplex.contains(s))
+                    listOfBedroomsOfProperiesInOneComplex.add(s);
+            }
+
             List<Broker> brokers = brokerRepository.findAll();
             Collections.shuffle(brokers);
             model.addAttribute("broker", brokers.get(0));

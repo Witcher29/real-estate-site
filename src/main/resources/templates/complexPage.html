@@ -2112,22 +2112,16 @@
 
                                 <div class="row row-margin">
                                     <div class="col-sm-12">
+                                        <script th:src="@{/js/properties.js}" defer></script>
                                         <h1 class="section-title">Layouts</h1>
                                         <div id="similar-properties" class="amenities_line clearfix">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="similar-properties-filter">
-                                                        <div class="similar-properties-filter-title">Select number of
-                                                            bedrooms:
-                                                        </div>
+                                                        <div class="similar-properties-filter-title">Select number of bedrooms:</div>
                                                         <div class="filter-items filter_complex_property">
-                                                            <div class="filter-item current" data-bedrooms="all"
-                                                                 data-complexid="1712237222915x144910430782881800">All
-                                                                layouts
-                                                            </div>
-                                                            <div class="filter-item" data-bedrooms="1 Bedroom"
-                                                                 data-complexid="1712237222915x144910430782881800">1
-                                                                Bedroom
+                                                            <div class="filter-items filter_complex_property" id="filterItems">
+                                                                <!-- Кнопки для фильтрации будут добавлены динамически -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2135,7 +2129,7 @@
                                             </div>
 
                                             <div class="ajax_filter_rows">
-                                                <div class="row">
+                                                <div class="row" id="properties-list">
                                                     <div th:each="property, propertyStat : ${complex.propertyList}" class="col-lg-4 col-sm-6"
                                                          style=""
                                                          data-animation-direction="bottom"
