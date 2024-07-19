@@ -1237,6 +1237,7 @@
 
                             <div class="row row-margin">
                                 <div class="col-sm-12">
+                                    <script th:src="@{/js/properties.js}" defer></script>
                                     <h1 class="section-title">Layouts</h1>
                                     <div id="similar-properties" class="amenities_line clearfix">
                                         <div class="row">
@@ -1244,16 +1245,16 @@
                                                 <div class="similar-properties-filter">
                                                     <div class="similar-properties-filter-title">Select number of bedrooms:</div>
                                                     <div class="filter-items filter_complex_property">
-                                                        <div class="filter-item current" data-bedrooms="all" data-complexid="1712578791315x851322729255927800">All layouts</div>
-                                                        <div class="filter-item" data-bedrooms="4 Bedrooms"
-                                                             data-complexid="1712578791315x851322729255927800">4 Bedrooms</div>
+                                                        <div class="filter-items filter_complex_property" id="filterItems">
+                                                            <!-- Кнопки для фильтрации будут добавлены динамически -->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="ajax_filter_rows">
-                                            <div class="row">
+                                            <div class="row" id="properties-list">
                                                 <div th:each="property1, property1Stat : ${property.complex.propertyList}" th:if="${property1.id != property.id and property1Stat.index<6}" class="  col-lg-4 col-sm-6"
                                                      style=""
                                                      data-animation-direction="bottom"
@@ -2117,60 +2118,6 @@
 
 
 <!-- #main-wrapper -->
-<script>
-    // Получаем необходимые элементы
-    const filterItems = document.getElementById('filterItems');
-    const propertyContainer = document.getElementById('propertyContainer');
-
-    // Добавляем обработчик событий на клики по кнопкам фильтрации
-    filterItems.addEventListener('click', (event) => {
-        // Проверяем, что было кликнуто на кнопку фильтрации
-        if (event.target.classList.contains('filter-item')) {
-            // Убираем класс 'current' со всех кнопок
-            const filterItems = filterItems.querySelectorAll('.filter-item');
-            filterItems.forEach(item => item.classList.remove('current'));
-
-            // Добавляем класс 'current' на кликнутую кнопку
-            event.target.classList.add('current');
-
-            // Получаем количество спален из data-атрибута
-            const bedrooms = event.target.dataset.bedrooms;
-
-            // Показываем квартиры в соответствии с выбранным фильтром
-            showProperties(bedrooms);
-        }
-    });
-
-    // Функция для показа квартир
-    function showProperties(bedrooms) {
-        // Очищаем контейнер для квартир
-        propertyContainer.innerHTML = '';
-
-        // Получаем список квартир из Thymeleaf-модели
-        const properties = [...document.querySelectorAll('#propertyContainer > div')];
-
-        // Фильтруем квартиры по количеству спален
-        const filteredProperties = bedrooms === 'all'
-            ? properties
-            : properties.filter(property => {
-                const bedroomsText = property.querySelector('.item-property-title a').textContent.trim().split(' ')[0];
-                return parseInt(bedroomsText) === parseInt(bedrooms);
-            });
-
-        // Добавляем квартиры в контейнер
-        filteredProperties.forEach(property => {
-            propertyContainer.appendChild(property);
-        });
-    }
-
-    // Загружаем все квартиры при первичной загрузке страницы
-    window.addEventListener('DOMContentLoaded', () => {
-        showProperties('all');
-    });
-
-
-</script>
-
 
 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js?ver=5.0.20' id='fancybox-js'></script>
 <script type='text/javascript' src='http://ahmed1872.beget.tech/wp-content/themes/cozy/assets/js/fancy_add.js' id='fancybox-add-js'></script>

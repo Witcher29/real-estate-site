@@ -1,5 +1,7 @@
 package com.web_site.real_estate.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,9 +35,15 @@ public class Property {
     @Column(name = "ceiling_height", columnDefinition = "DECIMAL(5,2)")
     private Double ceiling_height;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "complex_id", referencedColumnName = "id", nullable = false)
     private Complex complex;
+
+    @JsonProperty("complex_name")
+    public String getComplexName() {
+        return complex != null ? complex.getComplex_name() : null;
+    }
 
     private String status;
     private Long price;

@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
 
@@ -75,13 +76,29 @@ public class MainController {
         return "homePage";
     }
 
+    static List<String> listOfBedroomsOfProperiesInOneComplex = new ArrayList<>();
+    static List<Property> listOfPropetiesInOneComplex = new ArrayList<>();
     @GetMapping("/property/{bedrooms}-bedrooms-in-{complexName}-{id}")
     public String moreDetailsOfProperties(@PathVariable("id") Integer idOfProperty, Model model) {
         Optional<Property> propertyOptional = propertyRepository.findById(idOfProperty);
         if (propertyOptional.isPresent()) {
             Property property = propertyOptional.get();
+
+            Complex complex = property.getComplex();
+            listOfBedroomsOfProperiesInOneComplex.clear();
+            listOfPropetiesInOneComplex.clear();
+            List<Property> listOfPropertiesInThisComplex = complex.getPropertyList();
+            for (Property property1 : listOfPropertiesInThisComplex) {
+                String s = String.valueOf(property1.getBedrooms());
+                if (property1.getId() != property.getId())
+                    listOfPropetiesInOneComplex.add(property1);
+                if (!listOfBedroomsOfProperiesInOneComplex.contains(s) && property1.getId() != property.getId())
+                    listOfBedroomsOfProperiesInOneComplex.add(s);
+            }
+
             model.addAttribute("property", property);
 
+            //если не будет совпадений, то вернёт первую запись в таблице
             List<Property> properties = propertyRepository.findAllByBedrooms(property.getBedrooms());
             Collections.shuffle(properties, new Random());
             if (properties.size() > 5)
@@ -103,7 +120,17 @@ public class MainController {
         return "propertyPage";
     }
 
+    @GetMapping("/bedrooms-list")
+    @ResponseBody
+    public List<String> getBedroomsList() {
+        return listOfBedroomsOfProperiesInOneComplex;
+    }
 
+    @GetMapping("/properties-list")
+    @ResponseBody
+    public List<Property> getProperties() {
+        return listOfPropetiesInOneComplex;
+    }
 
     @GetMapping("/complex/page/{numberOfPage}")
     public String complexes(@PathVariable(required = false) Integer numberOfPage, Model model) {
