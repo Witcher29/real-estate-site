@@ -23,7 +23,7 @@ public class Property {
 
     private LocalDate delivery_date;
 
-    @Column(name = "s_total", columnDefinition = "DECIMAL(5,2)")
+    @Column(name = "s_total", columnDefinition = "DECIMAL(7,2)")
     private Double s_total;
     private Integer bedrooms;
 

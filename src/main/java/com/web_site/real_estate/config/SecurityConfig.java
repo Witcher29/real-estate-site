@@ -1,5 +1,8 @@
 package com.web_site.real_estate.config;
 
+import com.web_site.real_estate.repo.AdministratorRepository;
+import com.web_site.real_estate.services.JpaUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,20 +21,19 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private String username = "ad";
-    private String password = "ad";
+    @Autowired
+    private AdministratorRepository administratorRepository;
 
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
-        UserDetails admin = User.builder().username(username).password(encoder.encode(password)).build();
-
-        return new InMemoryUserDetailsManager(admin);
+        return new JpaUserDetailsService(administratorRepository, encoder);
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/admin/create").authenticated()
                         .requestMatchers("/admin**").authenticated()
                         .requestMatchers("/admin/**").authenticated()
                         .anyRequest().permitAll())

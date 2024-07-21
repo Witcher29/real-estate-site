@@ -19,7 +19,7 @@ public class Complex {
     private Integer id;
 
     private LocalDate delivery_date;
-    @Column(name = "s_total", columnDefinition = "DECIMAL(5,2)")
+    @Column(name = "s_total", columnDefinition = "DECIMAL(8,2)")
     private Double s_total;
 
     @Column(name = "ceiling_height", columnDefinition = "DECIMAL(5,2)")
