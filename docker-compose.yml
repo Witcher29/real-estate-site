@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: my-sql-image
+    environment:
+      MYSQL_DATABASE: web_site
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1111
+      MYSQL_ROOT_PASSWORD: 0000
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    image: real-estate-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/web_site
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: 1111
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
+
+networks:
+  my-network:
+
